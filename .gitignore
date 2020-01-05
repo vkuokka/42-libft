@@ -1,0 +1,5 @@
+*.o
+libft.a
+main.c
+.vscore
+.DS_store
