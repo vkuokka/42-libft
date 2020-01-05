@@ -78,7 +78,8 @@ SRCS =	srcs/ft_bzero.c \
 		srcs/ft_del.c \
 		srcs/ft_lstlen.c \
 		srcs/ft_itoa_base.c \
-		srcs/ft_strspn.c
+		srcs/ft_strspn.c \
+		srcs/ft_strclen.c
 
 OBJ =	ft_bzero.o \
 		ft_memccpy.o \
@@ -146,7 +147,8 @@ OBJ =	ft_bzero.o \
 		ft_del.o \
 		ft_lstlen.o \
 		ft_itoa_base.o \
-		ft_strspn.o
+		ft_strspn.o \
+		ft_strclen.o
 
 INCL =	includes/
 

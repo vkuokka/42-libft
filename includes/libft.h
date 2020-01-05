@@ -93,5 +93,6 @@ void				ft_del(void *content, size_t size);
 size_t				ft_lstlen(t_list **alst);
 char				*ft_itoa_base(int value, int base);
 size_t				ft_strspn(const char *s1, const char *s2);
+size_t				ft_strclen(const char *s, int c);
 
 #endif
