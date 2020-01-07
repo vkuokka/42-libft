@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 13:10:30 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/28 15:38:52 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/01/07 11:36:50 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strchr(const char *s, int c)
 {
 	size_t i;
 
+	if (!s || !c)
+		return (NULL);
 	i = 0;
 	while (s[i])
 	{
