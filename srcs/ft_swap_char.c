@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_swap_char.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 16:57:59 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/16 16:58:09 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/01/10 15:01:30 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/01/10 15:04:15 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isspace(int c)
+void		ft_swap_char(char *a, char *b)
 {
-	if (c == ' ' || c == '\n' || c == '\t' ||
-	c == '\v' || c == '\r' || c == '\f')
-		return (1);
-	return (0);
+	char	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+	return ;
 }

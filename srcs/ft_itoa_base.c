@@ -6,13 +6,13 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 11:22:49 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/03 15:23:34 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/01/14 12:50:21 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_len(int value, int base)
+static int	length(unsigned long long value, int base)
 {
 	int		len;
 
@@ -24,7 +24,7 @@ static int	ft_len(int value, int base)
 	return (len);
 }
 
-static char	*ft_rev(char *str)
+static char	*reverse(char *str)
 {
 	char	*rev;
 	int		i;
@@ -44,38 +44,36 @@ static char	*ft_rev(char *str)
 	return (rev);
 }
 
-static char	ft_alpha(int set)
+static char	alpha(unsigned long long set)
 {
 	char	*alpha;
 
-	alpha = "ABCDEF";
+	alpha = "abcdef";
 	return (alpha[set % 10]);
 }
 
-char		*ft_itoa_base(int value, int base)
+char		*ft_itoa_base(unsigned long long value, int base)
 {
-	int		neg;
 	char	*str;
 	int		i;
 	int		set;
+	int		len;
 
 	if (base < 2 || base > 16)
 		return (NULL);
-	neg = value < 0 && base == 10 ? 1 : 0;
-	value < 0 ? value *= -1 : 0;
-	if (!(str = ft_strnew((ft_len(value, base) + neg))))
+	len = length(value, base);
+	if (!(str = ft_strnew(len)))
 		return (NULL);
 	i = 0;
-	while (value > 0)
+	while (i < len)
 	{
 		set = value % base;
 		if (set > 9)
-			str[i] = ft_alpha(set);
+			str[i] = alpha(set);
 		else
 			str[i] = set + '0';
 		value /= base;
 		i++;
 	}
-	neg ? str[i] = '-' : 0;
-	return (ft_rev(str));
+	return (reverse(str));
 }

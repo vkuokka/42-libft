@@ -6,20 +6,13 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:14:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/26 12:21:14 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/01/09 11:09:58 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isneg(int n)
-{
-	if (n < 0)
-		return (1);
-	return (0);
-}
-
-static int	ft_len(int n)
+static int	length(long long n)
 {
 	int count;
 
@@ -29,7 +22,7 @@ static int	ft_len(int n)
 	return (count);
 }
 
-char		*ft_itoa(int n)
+char		*ft_itoa(long long n)
 {
 	size_t			i;
 	char			*strnb;
@@ -37,17 +30,14 @@ char		*ft_itoa(int n)
 
 	if (n == 0)
 		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	if (n + 1 == -9223372036854775807)
+		return (ft_strdup("-9223372036854775808"));
 	neg = 0;
-	if (ft_isneg(n))
-	{
-		neg = 1;
-		n = n * -1;
-	}
-	if (!(strnb = ft_strnew(neg + ft_len(n))))
+	n < 0 ? neg = 1 : 0;
+	n < 0 ? n *= -1 : 0;
+	if (!(strnb = ft_strnew(neg + length(n))))
 		return (NULL);
-	i = neg + ft_len(n) - 1;
+	i = neg + length(n) - 1;
 	while (n != 0)
 	{
 		strnb[i--] = n % 10 + '0';

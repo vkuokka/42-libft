@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:38:55 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/03 15:12:51 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/01/13 14:41:09 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void				ft_strdel(char **as);
 void				ft_strclr(char *s);
 void				ft_memdel(void **ap);
 void				*ft_memalloc(size_t size);
-char				*ft_itoa(int n);
+char				*ft_itoa(long long n);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
@@ -89,9 +89,10 @@ void				ft_lstaddback(t_list **alst, t_list *new);
 int					ft_isupper(int c);
 int					ft_islower(int c);
 void				ft_swap(int *a, int *b);
+void				ft_swap_char(char *a, char *b);
 void				ft_del(void *content, size_t size);
 size_t				ft_lstlen(t_list **alst);
-char				*ft_itoa_base(int value, int base);
+char				*ft_itoa_base(unsigned long long value, int base);
 size_t				ft_strspn(const char *s1, const char *s2);
 size_t				ft_strclen(const char *s, int c);
 
