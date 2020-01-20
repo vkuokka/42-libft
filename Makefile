@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/01/10 15:03:26 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/01/20 11:17:12 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,8 @@ SRCS =	srcs/ft_bzero.c \
 		srcs/ft_lstlen.c \
 		srcs/ft_itoa_base.c \
 		srcs/ft_strspn.c \
-		srcs/ft_strclen.c
+		srcs/ft_strclen.c \
+		srcs/ft_ftoa.c 
 
 OBJ =	ft_bzero.o \
 		ft_memccpy.o \
@@ -150,7 +151,8 @@ OBJ =	ft_bzero.o \
 		ft_lstlen.o \
 		ft_itoa_base.o \
 		ft_strspn.o \
-		ft_strclen.o
+		ft_strclen.o \
+		ft_ftoa.o
 
 INCL =	includes/
 
