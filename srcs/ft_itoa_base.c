@@ -14,11 +14,9 @@
 
 static int	length(unsigned long long value, int base)
 {
-	int		len;
+	int	len;
 
 	len = 1;
-	if (value < 0)
-		len++;
 	while (value /= base)
 		len++;
 	return (len);
@@ -27,8 +25,8 @@ static int	length(unsigned long long value, int base)
 static char	*reverse(char *str)
 {
 	char	*rev;
-	int		i;
-	int		j;
+	int	i;
+	int	j;
 
 	if (!(rev = ft_strnew(ft_strlen(str))))
 		return (NULL);
@@ -55,9 +53,9 @@ static char	alpha(unsigned long long set)
 char		*ft_itoa_base(unsigned long long value, int base)
 {
 	char	*str;
-	int		i;
-	int		set;
-	int		len;
+	int	i;
+	int	set;
+	int	len;
 
 	if (base < 2 || base > 16)
 		return (NULL);

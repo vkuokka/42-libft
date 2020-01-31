@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-static long double	round(int precision, long double f)
+static long double		round_decimal(int precision, long double f)
 {
 	long double		round;
-	int				d;
+	int			d;
 
 	round = 0.5;
 	if (f < 0)
@@ -26,9 +26,10 @@ static long double	round(int precision, long double f)
 	return (round);
 }
 
-static char			*fraction(int pre, long double f, uint64_t dec)
+static char			*fraction(int pre, long double f,
+				unsigned long long dec)
 {
-	int				i;
+	int			i;
 	char			*fpart;
 
 	fpart = ft_strnew(pre + 2);
@@ -46,15 +47,15 @@ static char			*fraction(int pre, long double f, uint64_t dec)
 
 char				*ft_ftoa(long double f, int pre)
 {
-	uint64_t			dec;
-	char				*ipart;
-	char				*fpart;
-	char				*joint;
-	int					neg;
+	unsigned long long	dec;
+	char			*ipart;
+	char			*fpart;
+	char			*joint;
+	int			neg;
 
 	neg = 0;
 	f < 0 ? neg = 1 : 0;
-	f = f + round(pre, f);
+	f = f + round_decimal(pre, f);
 	f *= (f < 0) ? -1 : 1;
 	dec = f;
 	ipart = ft_itoa(dec);
