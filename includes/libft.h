@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:38:55 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/20 16:04:56 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/02/03 13:53:39 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ char				*ft_itoa_base(unsigned long long value, int base);
 size_t				ft_strspn(const char *s1, const char *s2);
 size_t				ft_strclen(const char *s, int c);
 char				*ft_ftoa(long double f, int pre);
+int					ft_count_digits(long long nbr);
 
 #endif
