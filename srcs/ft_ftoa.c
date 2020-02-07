@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 10:07:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/20 16:08:02 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/02/07 16:28:53 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static long double		round_decimal(int precision, long double f)
 {
-	long double		round;
-	int			d;
+	long double			round;
+	int					d;
 
 	round = 0.5;
 	if (f < 0)
@@ -26,11 +26,11 @@ static long double		round_decimal(int precision, long double f)
 	return (round);
 }
 
-static char			*fraction(int pre, long double f,
-				unsigned long long dec)
+static char				*fraction(int pre, long double f,
+						unsigned long long dec)
 {
-	int			i;
-	char			*fpart;
+	int					i;
+	char				*fpart;
 
 	fpart = ft_strnew(pre + 2);
 	fpart[0] = '.';
@@ -45,13 +45,13 @@ static char			*fraction(int pre, long double f,
 	return (fpart);
 }
 
-char				*ft_ftoa(long double f, int pre)
+char					*ft_ftoa(long double f, int pre)
 {
 	unsigned long long	dec;
-	char			*ipart;
-	char			*fpart;
-	char			*joint;
-	int			neg;
+	char				*ipart;
+	char				*fpart;
+	char				*joint;
+	int					neg;
 
 	neg = 0;
 	f < 0 ? neg = 1 : 0;

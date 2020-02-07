@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 11:22:49 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/14 12:50:21 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/02/07 16:29:59 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ static int	length(unsigned long long value, int base)
 static char	*reverse(char *str)
 {
 	char	*rev;
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 
 	if (!(rev = ft_strnew(ft_strlen(str))))
 		return (NULL);
@@ -53,9 +53,9 @@ static char	alpha(unsigned long long set)
 char		*ft_itoa_base(unsigned long long value, int base)
 {
 	char	*str;
-	int	i;
-	int	set;
-	int	len;
+	int		i;
+	int		set;
+	int		len;
 
 	if (base < 2 || base > 16)
 		return (NULL);
