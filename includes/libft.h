@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:38:55 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/02/03 13:53:39 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/02/13 15:37:43 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int					ft_isupper(int c);
 int					ft_islower(int c);
 void				ft_swap(int *a, int *b);
 void				ft_swap_char(char *a, char *b);
+void				ft_swap_str(char **a, char **b);
 void				ft_del(void *content, size_t size);
 size_t				ft_lstlen(t_list **alst);
 char				*ft_itoa_base(unsigned long long value, int base);
