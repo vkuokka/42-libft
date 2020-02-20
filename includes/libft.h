@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:38:55 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/02/13 15:37:43 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/02/20 11:20:37 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ size_t				ft_strspn(const char *s1, const char *s2);
 size_t				ft_strclen(const char *s, int c);
 char				*ft_ftoa(long double f, int pre);
 int					ft_count_digits(long long nbr);
+void				ft_arriter(char **arr, void (*f)(char **));
 
 #endif
