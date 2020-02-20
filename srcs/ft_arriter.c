@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 11:18:03 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/02/20 11:21:34 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/02/20 12:42:54 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_arriter(char **arr, void (*f)(char **))
 {
 	int i;
 
+	if (!arr)
+		return ;
 	i = 0;
 	while (arr[i])
 	{
