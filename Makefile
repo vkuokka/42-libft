@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/02/20 11:21:13 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/02/26 10:58:10 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,8 @@ SRCS =	srcs/ft_bzero.c \
 		srcs/ft_strclen.c \
 		srcs/ft_ftoa.c \
 	   	srcs/ft_count_digits.c \
-		srcs/ft_arriter.c
+		srcs/ft_arriter.c \
+		srcs/ft_arrfree.c
 
 OBJ =	ft_bzero.o \
 		ft_memccpy.o \
@@ -158,7 +159,8 @@ OBJ =	ft_bzero.o \
 		ft_strclen.o \
 		ft_ftoa.o \
 		ft_count_digits.o \
-		ft_arriter.o
+		ft_arriter.o \
+		ft_arrfree.o
 
 INCL =	includes/
 
