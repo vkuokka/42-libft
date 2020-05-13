@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/02/26 10:58:10 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/05/13 17:25:32 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,11 +32,6 @@ SRCS =	srcs/ft_bzero.c \
 		srcs/ft_strcmp.c \
 		srcs/ft_strncmp.c \
 		srcs/ft_atoi.c \
-		srcs/ft_isalpha.c \
-		srcs/ft_isdigit.c \
-		srcs/ft_isalnum.c \
-		srcs/ft_isascii.c \
-		srcs/ft_isprint.c \
 		srcs/ft_toupper.c \
 		srcs/ft_tolower.c \
 		srcs/ft_strtrim.c \
@@ -61,7 +56,6 @@ SRCS =	srcs/ft_bzero.c \
 		srcs/ft_putstr_fd.c \
 		srcs/ft_putendl_fd.c \
 		srcs/ft_putnbr_fd.c \
-		srcs/ft_isspace.c \
 		srcs/ft_strsplit.c \
 		srcs/ft_lstnew.c \
 		srcs/ft_lstdelone.c \
@@ -72,8 +66,6 @@ SRCS =	srcs/ft_bzero.c \
 		srcs/ft_strequ.c \
 		srcs/ft_strncpy.c \
 		srcs/ft_lstaddback.c \
-		srcs/ft_isupper.c \
-		srcs/ft_islower.c \
 		srcs/ft_swap.c \
 		srcs/ft_swap_char.c \
 		srcs/ft_swap_str.c \
@@ -85,89 +77,30 @@ SRCS =	srcs/ft_bzero.c \
 		srcs/ft_ftoa.c \
 	   	srcs/ft_count_digits.c \
 		srcs/ft_arriter.c \
-		srcs/ft_arrfree.c
+		srcs/ft_arrfree.c \
+		srcs/ctype/ft_isalnum.c \
+		srcs/ctype/ft_isalpha.c \
+		srcs/ctype/ft_isascii.c \
+		srcs/ctype/ft_iscntrl.c \
+		srcs/ctype/ft_isdigit.c \
+		srcs/ctype/ft_isgraph.c \
+		srcs/ctype/ft_islower.c \
+		srcs/ctype/ft_isprint.c \
+		srcs/ctype/ft_ispunct.c \
+		srcs/ctype/ft_isspace.c \
+		srcs/ctype/ft_isspace.c \
+		srcs/ctype/ft_isupper.c \
 
-OBJ =	ft_bzero.o \
-		ft_memccpy.o \
-		ft_memchr.o \
-		ft_memcmp.o \
-		ft_memcpy.o \
-		ft_memmove.o \
-		ft_memset.o \
-		ft_strlen.o \
-		ft_strdup.o \
-		ft_strcpy.o \
-		ft_strcat.o \
-		ft_strncat.o \
-		ft_strlcat.o \
-		ft_strchr.o \
-		ft_strrchr.o \
-		ft_strstr.o \
-		ft_strnstr.o \
-		ft_strcmp.o \
-		ft_strncmp.o \
-		ft_atoi.o \
-		ft_isalpha.o \
-		ft_isdigit.o \
-		ft_isalnum.o \
-		ft_isascii.o \
-		ft_isprint.o \
-		ft_toupper.o \
-		ft_tolower.o \
-		ft_strtrim.o \
-		ft_strsub.o \
-		ft_strnew.o \
-		ft_strnequ.o \
-		ft_strmapi.o \
-		ft_strmap.o \
-		ft_strjoin.o \
-		ft_striteri.o \
-		ft_striter.o \
-		ft_strdel.o \
-		ft_strclr.o \
-		ft_memdel.o \
-		ft_memalloc.o \
-		ft_itoa.o \
-		ft_putstr.o \
-		ft_putendl.o \
-		ft_putnbr.o \
-		ft_putchar.o \
-		ft_putchar_fd.o \
-		ft_putstr_fd.o \
-		ft_putendl_fd.o \
-		ft_putnbr_fd.o \
-		ft_isspace.o \
-		ft_strsplit.o \
-		ft_lstnew.o \
-		ft_lstdelone.o \
-		ft_lstdel.o \
-		ft_lstadd.o \
-		ft_lstiter.o \
-		ft_lstmap.o \
-		ft_strequ.o \
-		ft_strncpy.o \
-		ft_lstaddback.o \
-		ft_isupper.o \
-		ft_islower.o \
-		ft_swap.o \
-		ft_swap_char.o \
-		ft_swap_str.o \
-		ft_del.o \
-		ft_lstlen.o \
-		ft_itoa_base.o \
-		ft_strspn.o \
-		ft_strclen.o \
-		ft_ftoa.o \
-		ft_count_digits.o \
-		ft_arriter.o \
-		ft_arrfree.o
+OBJ =	$(notdir $(SRCS:.c=.o))
+
+FLAGS = -Wall -Werror -Wextra
 
 INCL =	includes/
 
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -I $(INCL) -c $(SRCS)
+	gcc $(FLAGS) -I $(INCL) -c $(SRCS)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 

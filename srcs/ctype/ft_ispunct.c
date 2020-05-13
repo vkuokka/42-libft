@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_ispunct.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 16:28:53 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/28 12:40:00 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/05/13 16:21:59 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/13 16:39:23 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ctype.h"
 
-int		ft_isalnum(int c)
+int ft_ispunct(int c)
 {
-	if (ft_islower(c) || ft_isupper(c) || ft_isdigit(c))
+	if (ft_isgraph(c) && !ft_isalnum(c))
 		return (1);
 	return (0);
 }

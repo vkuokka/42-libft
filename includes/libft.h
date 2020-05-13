@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:38:55 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/02/26 11:02:29 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/13 16:42:02 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include "ctype.h"
 
 typedef struct		s_list
 {
@@ -46,11 +47,6 @@ char				*ft_strnstr(const char *haystack, const char *needle,\
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
-int					ft_isalpha(int c);
-int					ft_isdigit(int c);
-int					ft_isalnum(int c);
-int					ft_isascii(int c);
-int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_strtrim(char const *s);
@@ -75,7 +71,6 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-int					ft_isspace(int c);
 char				**ft_strsplit(char const *s, char c);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
@@ -86,8 +81,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 int					ft_strequ(char const *s1, char const *s2);
 void				ft_lstaddback(t_list **alst, t_list *new);
-int					ft_isupper(int c);
-int					ft_islower(int c);
 void				ft_swap(int *a, int *b);
 void				ft_swap_char(char *a, char *b);
 void				ft_swap_str(char **a, char **b);

@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_isgraph.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 16:57:59 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/16 16:58:09 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/05/13 16:16:55 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/13 16:39:16 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ctype.h"
 
-int		ft_isspace(int c)
+int	ft_isgraph(int c)
 {
-	if (c == ' ' || c == '\n' || c == '\t' ||
-	c == '\v' || c == '\r' || c == '\f')
+	if (ft_isprint(c) && !ft_isspace(c))
 		return (1);
 	return (0);
 }

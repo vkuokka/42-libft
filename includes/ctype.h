@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ctype.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 16:02:09 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/28 12:37:10 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/05/13 16:10:31 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/13 16:40:36 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef CTYPE_H
 
-int		ft_isalpha(int c)
-{
-	if (ft_isupper(c) || ft_islower(c))
-		return (1);
-	return (0);
-}
+#define CTYPE_H
+
+int	ft_isalnum(int c);
+int	ft_isalpha(int c);
+int	ft_isascii(int c);
+int	ft_iscntrl(int c);
+int	ft_isdigit(int c);
+int	ft_isgraph(int c);
+int	ft_islower(int c);
+int	ft_isprint(int c);
+int ft_ispunct(int c);
+int	ft_isspace(int c);
+int	ft_isupper(int c);
+
+#endif
