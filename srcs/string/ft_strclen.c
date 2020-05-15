@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ctype.h                                            :+:      :+:    :+:   */
+/*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/13 16:10:31 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/13 19:04:05 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/17 10:39:11 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/15 10:09:45 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CTYPE_H
+#include "string.h"
 
-# define CTYPE_H
+size_t		ft_strclen(const char *s, int c)
+{
+	size_t	i;
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_iscntrl(int c);
-int	ft_isdigit(int c);
-int	ft_isgraph(int c);
-int	ft_islower(int c);
-int	ft_isprint(int c);
-int ft_ispunct(int c);
-int	ft_isspace(int c);
-int	ft_isupper(int c);
-
-#endif
+	i = 0;
+	while (s[i] && s[i] != c)
+		i++;
+	return (i);
+}

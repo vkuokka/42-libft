@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ctype.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/13 16:10:31 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/13 19:04:05 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/16 14:03:55 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/15 10:08:50 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CTYPE_H
+#include "string.h"
 
-# define CTYPE_H
+void					*ft_memchr(const void *s, int c, size_t n)
+{
+	size_t				i;
+	const unsigned char	*cs;
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_iscntrl(int c);
-int	ft_isdigit(int c);
-int	ft_isgraph(int c);
-int	ft_islower(int c);
-int	ft_isprint(int c);
-int ft_ispunct(int c);
-int	ft_isspace(int c);
-int	ft_isupper(int c);
-
-#endif
+	i = -1;
+	cs = (const unsigned char *)s;
+	while (++i < n)
+		if (cs[i] == c)
+			return ((void *)s + i);
+	return (NULL);
+}
