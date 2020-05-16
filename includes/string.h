@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 19:02:47 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/15 10:22:10 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/16 19:24:03 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 # define STRING_H
 
-#include <stdlib.h>
+# include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);

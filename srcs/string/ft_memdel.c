@@ -6,11 +6,11 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:15:19 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/13 19:24:33 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/15 14:43:27 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "string.h"
 
 void	ft_memdel(void **ap)
 {

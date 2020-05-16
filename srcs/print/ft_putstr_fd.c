@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 11:38:59 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/28 14:16:15 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/22 12:04:35 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 19:35:55 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "print.h"
+#include "string.h"
 
-void	ft_putstr(char const *s)
+void	ft_putstr_fd(char const *s, int fd)
 {
 	if (!s)
 		return ;
-	write(1, s, ft_strlen(s));
+	write(fd, s, ft_strlen(s));
 }

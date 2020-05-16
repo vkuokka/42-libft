@@ -6,42 +6,13 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/05/15 10:43:56 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/05/16 19:36:36 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libft.a
 
-SRCS =	srcs/ft_atoi.c \
-		srcs/ft_toupper.c \
-		srcs/ft_tolower.c \
-		srcs/ft_itoa.c \
-		srcs/ft_putstr.c \
-		srcs/ft_putendl.c \
-		srcs/ft_putnbr.c \
-		srcs/ft_putchar.c \
-		srcs/ft_putchar_fd.c \
-		srcs/ft_putstr_fd.c \
-		srcs/ft_putendl_fd.c \
-		srcs/ft_putnbr_fd.c \
-		srcs/ft_lstnew.c \
-		srcs/ft_lstdelone.c \
-		srcs/ft_lstdel.c \
-		srcs/ft_lstadd.c \
-		srcs/ft_lstiter.c \
-		srcs/ft_lstmap.c \
-		srcs/ft_lstaddback.c \
-		srcs/ft_swap.c \
-		srcs/ft_swap_char.c \
-		srcs/ft_swap_str.c \
-		srcs/ft_del.c \
-		srcs/ft_lstlen.c \
-		srcs/ft_itoa_base.c \
-		srcs/ft_ftoa.c \
-	   	srcs/ft_count_digits.c \
-		srcs/ft_arriter.c \
-		srcs/ft_arrfree.c \
-		srcs/ctype/ft_isalnum.c \
+SRCS =	srcs/ctype/ft_isalnum.c \
 		srcs/ctype/ft_isalpha.c \
 		srcs/ctype/ft_isascii.c \
 		srcs/ctype/ft_iscntrl.c \
@@ -53,6 +24,14 @@ SRCS =	srcs/ft_atoi.c \
 		srcs/ctype/ft_isspace.c \
 		srcs/ctype/ft_isspace.c \
 		srcs/ctype/ft_isupper.c \
+		srcs/print/ft_putchar_fd.c \
+		srcs/print/ft_putchar.c \
+		srcs/print/ft_putendl_fd.c \
+		srcs/print/ft_putendl.c \
+		srcs/print/ft_putnbr_fd.c \
+		srcs/print/ft_putnbr.c \
+		srcs/print/ft_putstr_fd.c \
+		srcs/print/ft_putstr.c \
 		srcs/string/ft_bzero.c \
 		srcs/string/ft_memalloc.c \
 		srcs/string/ft_memccpy.c \

@@ -6,11 +6,10 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:15:12 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/13 19:09:38 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/15 14:43:05 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "stdlib.h"
 #include "string.h"
 
 void		*ft_memalloc(size_t size)

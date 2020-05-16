@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 12:06:44 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/26 12:21:30 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/22 11:44:52 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 19:28:45 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "print.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void		ft_putnbr(int n)
 {
-	if (!s)
-		return ;
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	long	n2;
+
+	n2 = n;
+	if (n2 < 0)
+	{
+		ft_putchar('-');
+		n2 = n2 * -1;
+	}
+	if (n2 < 10)
+		ft_putchar(n2 + '0');
+	else
+	{
+		ft_putnbr(n2 / 10);
+		ft_putnbr(n2 % 10);
+	}
 }

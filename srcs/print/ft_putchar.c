@@ -6,11 +6,11 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:37:32 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/26 12:21:29 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/16 19:24:21 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "print.h"
 
 void	ft_putchar(char c)
 {

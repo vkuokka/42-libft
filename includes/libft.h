@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:38:55 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/15 10:24:54 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/16 19:34:36 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
 # include "ctype.h"
 # include "string.h"
+# include "print.h"
 
 typedef struct		s_list
 {
@@ -31,14 +29,6 @@ int					ft_atoi(const char *str);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_itoa(long long n);
-void				ft_putstr(char const *s);
-void				ft_putendl(char const *s);
-void				ft_putnbr(int n);
-void				ft_putchar(char c);
-void				ft_putchar_fd(char c, int fd);
-void				ft_putstr_fd(char const *s, int fd);
-void				ft_putendl_fd(char const *s, int fd);
-void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
