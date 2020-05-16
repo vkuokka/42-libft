@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/05/16 19:36:36 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/05/16 20:04:15 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,15 @@ SRCS =	srcs/ctype/ft_isalnum.c \
 		srcs/ctype/ft_isspace.c \
 		srcs/ctype/ft_isspace.c \
 		srcs/ctype/ft_isupper.c \
+		srcs/lst/ft_del.c \
+		srcs/lst/ft_lstadd.c \
+		srcs/lst/ft_lstaddback.c \
+		srcs/lst/ft_lstdel.c \
+		srcs/lst/ft_lstdelone.c \
+		srcs/lst/ft_lstiter.c \
+		srcs/lst/ft_lstlen.c \
+		srcs/lst/ft_lstmap.c \
+		srcs/lst/ft_lstnew.c \
 		srcs/print/ft_putchar_fd.c \
 		srcs/print/ft_putchar.c \
 		srcs/print/ft_putendl_fd.c \

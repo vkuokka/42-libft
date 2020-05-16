@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstaddback.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/26 10:25:51 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/26 12:21:17 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/23 14:08:08 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 19:50:39 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
-void	ft_lstaddback(t_list **alst, t_list *new)
+void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list *cur_list;
-
-	if (!alst || !new)
+	if (!alst)
 		return ;
-	cur_list = *alst;
-	while (cur_list->next)
-		cur_list = cur_list->next;
-	cur_list->next = new;
+	del((*alst)->content, (*alst)->content_size);
+	free(*alst);
+	*alst = NULL;
 }

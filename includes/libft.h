@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 14:38:55 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/16 19:34:36 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/16 20:02:20 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,30 +17,16 @@
 # include "ctype.h"
 # include "string.h"
 # include "print.h"
-
-typedef struct		s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
+# include "lst.h"
 
 int					ft_atoi(const char *str);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_itoa(long long n);
-t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstaddback(t_list **alst, t_list *new);
 void				ft_swap(int *a, int *b);
 void				ft_swap_char(char *a, char *b);
 void				ft_swap_str(char **a, char **b);
-void				ft_del(void *content, size_t size);
-size_t				ft_lstlen(t_list **alst);
 char				*ft_itoa_base(unsigned long long value, int base);
 char				*ft_ftoa(long double f, int pre);
 int					ft_count_digits(long long nbr);

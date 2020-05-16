@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstaddback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 14:10:42 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/29 10:57:53 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/26 10:25:51 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 19:48:19 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void		ft_lstaddback(t_list **alst, t_list *new)
 {
-	t_list *cur_list;
-	t_list *next_list;
+	t_list	*cur_list;
 
-	if (!alst)
+	if (!alst || !new)
 		return ;
 	cur_list = *alst;
-	while (cur_list)
-	{
-		next_list = cur_list->next;
-		del(cur_list->content, cur_list->content_size);
-		free(cur_list);
-		cur_list = next_list;
-	}
-	*alst = NULL;
+	while (cur_list->next)
+		cur_list = cur_list->next;
+	cur_list->next = new;
 }

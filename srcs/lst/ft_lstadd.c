@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_del.c                                           :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/08 14:54:09 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/11/08 14:55:31 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/24 10:26:36 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 19:47:24 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lst.h"
 
-void	ft_del(void *content, size_t size)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	free(content);
-	(void)size;
+	if (!alst || !new)
+		return ;
+	new->next = *alst;
+	*alst = new;
 }
