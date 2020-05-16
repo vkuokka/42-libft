@@ -6,11 +6,11 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 12:29:37 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/26 12:21:22 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/16 21:03:05 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {

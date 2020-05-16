@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_str.c                                      :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/10 14:48:27 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/02/10 15:33:26 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/17 17:00:35 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 20:29:26 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ctype.h"
 
-void		ft_swap_str(char **a, char **b)
+int		ft_toupper(int c)
 {
-	char	*tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-	return ;
+	if (ft_islower(c))
+		return (c - 32);
+	return (c);
 }

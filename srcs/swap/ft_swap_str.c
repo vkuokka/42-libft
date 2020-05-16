@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arrfree.c                                       :+:      :+:    :+:   */
+/*   ft_swap_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/26 10:56:06 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/02/26 11:00:02 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/02/10 14:48:27 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 20:29:00 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_arrfree(char **arr)
+void		ft_swap_str(char **a, char **b)
 {
-	int i;
+	char	*tmp;
 
-	if (!arr)
-		return ;
-	i = 0;
-	while (arr[i])
-	{
-		ft_strdel(&arr[i]);
-		i++;
-	}
-	free(arr);
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+	return ;
 }

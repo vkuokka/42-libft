@@ -6,11 +6,11 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 11:22:49 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/02/07 16:29:59 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/16 20:28:00 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
 static int	length(unsigned long long value, int base)
 {

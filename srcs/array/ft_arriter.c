@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_digits.c                                  :+:      :+:    :+:   */
+/*   ft_arriter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/03 11:48:08 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/02/03 11:50:04 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/02/20 11:18:03 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 21:03:52 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_count_digits(long long nbr)
-{
-	int count;
+#include <stddef.h>
 
-	count = 1;
-	while (nbr /= 10)
-		count++;
-	return (count);
+void		ft_arriter(char **arr, void (*f)(const char *))
+{
+	size_t	i;
+
+	if (!arr)
+		return ;
+	i = -1;
+	while (arr[++i])
+		(*f)(arr[i]);
 }

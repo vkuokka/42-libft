@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_arrfree.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/15 11:01:09 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/03 15:12:51 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/02/26 10:56:06 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 21:04:34 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
-int		ft_atoi(const char *str)
+void		ft_arrfree(char **arr)
 {
-	int		sign;
-	int		sum;
 	size_t	i;
 
-	i = 0;
-	while (ft_isspace(str[i]))
-		i++;
-	sign = 1;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	sum = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		sum = sum * 10 + str[i] - '0';
-		i++;
-	}
-	return (sum * sign);
+	if (!arr)
+		return ;
+	i = -1;
+	while (arr[++i])
+		ft_strdel(&arr[i]);
+	free(arr);
 }

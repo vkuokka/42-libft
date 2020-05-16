@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 16:10:31 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/13 19:04:05 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/16 20:45:06 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int	ft_isprint(int c);
 int ft_ispunct(int c);
 int	ft_isspace(int c);
 int	ft_isupper(int c);
+int	ft_toupper(int c);
+int	ft_tolower(int c);
 
 #endif

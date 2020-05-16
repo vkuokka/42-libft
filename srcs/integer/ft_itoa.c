@@ -6,13 +6,13 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:14:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/09 11:09:58 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/05/16 20:28:29 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "string.h"
 
-static int	length(long long n)
+static int			length(long long n)
 {
 	int count;
 
@@ -22,7 +22,7 @@ static int	length(long long n)
 	return (count);
 }
 
-char		*ft_itoa(long long n)
+char				*ft_itoa(long long n)
 {
 	size_t			i;
 	char			*strnb;

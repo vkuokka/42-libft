@@ -1,20 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 17:14:16 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/28 12:44:39 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/07/15 11:01:09 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 20:38:55 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ctype.h"
+#include <stddef.h>
 
-int		ft_tolower(int c)
+int			ft_atoi(const char *str)
 {
-	if (ft_isupper(c))
-		return (c + 32);
-	return (c);
+	int		sign;
+	int		sum;
+	size_t	i;
+
+	i = 0;
+	while (ft_isspace(str[i]))
+		i++;
+	sign = 1;
+	if (str[i] == '-')
+		sign = -1;
+	if (str[i] == '+' || str[i] == '-')
+		i++;
+	sum = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		sum = sum * 10 + str[i] - '0';
+		i++;
+	}
+	return (sum * sign);
 }

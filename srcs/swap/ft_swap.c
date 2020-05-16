@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 17:00:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2019/10/28 12:43:38 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/14 16:17:12 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 20:29:06 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_toupper(int c)
+void	ft_swap(int *a, int *b)
 {
-	if (ft_islower(c))
-		return (c - 32);
-	return (c);
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+	return ;
 }

@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arriter.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 11:18:03 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/02/26 11:02:17 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/17 17:14:16 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 20:29:16 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ctype.h"
 
-void	ft_arriter(char **arr, void (*f)(const char *))
+int		ft_tolower(int c)
 {
-	int i;
-
-	if (!arr)
-		return ;
-	i = 0;
-	while (arr[i])
-	{
-		(*f)(arr[i]);
-		i++;
-	}
+	if (ft_isupper(c))
+		return (c + 32);
+	return (c);
 }

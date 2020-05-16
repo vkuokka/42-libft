@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_char.c                                     :+:      :+:    :+:   */
+/*   ft_count_digits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/10 15:01:30 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/01/10 15:04:15 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/02/03 11:48:08 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/16 20:26:20 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void		ft_swap_char(char *a, char *b)
+int		ft_count_digits(long long nbr)
 {
-	char	tmp;
+	int	count;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-	return ;
+	count = 1;
+	while (nbr /= 10)
+		count++;
+	return (count);
 }

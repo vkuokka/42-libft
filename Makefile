@@ -6,13 +6,15 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/05/16 20:04:15 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/05/16 20:56:48 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libft.a
 
-SRCS =	srcs/ctype/ft_isalnum.c \
+SRCS =	srcs/array/ft_arrfree.c \
+		srcs/array/ft_arriter.c \
+		srcs/ctype/ft_isalnum.c \
 		srcs/ctype/ft_isalpha.c \
 		srcs/ctype/ft_isascii.c \
 		srcs/ctype/ft_iscntrl.c \
@@ -24,6 +26,13 @@ SRCS =	srcs/ctype/ft_isalnum.c \
 		srcs/ctype/ft_isspace.c \
 		srcs/ctype/ft_isspace.c \
 		srcs/ctype/ft_isupper.c \
+		srcs/ctype/ft_tolower.c \
+		srcs/ctype/ft_toupper.c \
+		srcs/integer/ft_atoi.c \
+		srcs/integer/ft_count_digits.c \
+		srcs/integer/ft_ftoa.c \
+		srcs/integer/ft_itoa_base.c \
+		srcs/integer/ft_itoa.c \
 		srcs/lst/ft_del.c \
 		srcs/lst/ft_lstadd.c \
 		srcs/lst/ft_lstaddback.c \
@@ -78,6 +87,9 @@ SRCS =	srcs/ctype/ft_isalnum.c \
 		srcs/string/ft_strstr.c \
 		srcs/string/ft_strsub.c \
 		srcs/string/ft_strtrim.c \
+		srcs/swap/ft_swap_char.c \
+		srcs/swap/ft_swap_str.c \
+		srcs/swap/ft_swap.c \
 
 OBJ =	$(notdir $(SRCS:.c=.o))
 
