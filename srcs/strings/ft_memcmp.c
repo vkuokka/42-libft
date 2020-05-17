@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.h                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:02 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:02:04 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/16 14:25:39 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:06:47 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_H
+#include "strings.h"
 
-# define PRINT_H
+int						ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	size_t				i;
+	const unsigned char	*cs1;
+	const unsigned char	*cs2;
 
-# include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
-void	ft_putendl_fd(char const *s, int fd);
-void	ft_putendl(char const *s);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
-void	ft_putstr_fd(char const *s, int fd);
-void	ft_putstr(char const *s);
-
-#endif
+	i = -1;
+	cs1 = (const unsigned char*)s1;
+	cs2 = (const unsigned char*)s2;
+	while (++i < n)
+		if (cs1[i] != cs2[i])
+			return (cs1[i] - cs2[i]);
+	return (0);
+}

@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.h                                            :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:02 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:02:04 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/20 18:16:26 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:07:42 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_H
+#include "strings.h"
 
-# define PRINT_H
+char		*ft_strmap(char const *s, char (*f)(char))
+{
+	char	*fresh;
+	size_t	i;
 
-# include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
-void	ft_putendl_fd(char const *s, int fd);
-void	ft_putendl(char const *s);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
-void	ft_putstr_fd(char const *s, int fd);
-void	ft_putstr(char const *s);
-
-#endif
+	if (!s || !f)
+		return (NULL);
+	fresh = ft_strnew(ft_strlen(s));
+	if (!fresh)
+		return (NULL);
+	i = -1;
+	while (s[++i])
+		fresh[i] = f(s[i]);
+	fresh[i] = '\0';
+	return (fresh);
+}

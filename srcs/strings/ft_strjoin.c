@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.h                                            :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:02 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:02:04 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/20 18:25:35 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:07:32 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_H
+#include "strings.h"
 
-# define PRINT_H
+char		*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*join;
 
-# include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
-void	ft_putendl_fd(char const *s, int fd);
-void	ft_putendl(char const *s);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
-void	ft_putstr_fd(char const *s, int fd);
-void	ft_putstr(char const *s);
-
-#endif
+	if (!s1 || !s2)
+		return (NULL);
+	join = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
+	if (!join)
+		return (NULL);
+	ft_strcat(join, s1);
+	ft_strcat(join, s2);
+	return (join);
+}

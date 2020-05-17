@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.h                                            :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:02 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:02:04 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/20 18:17:07 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:08:05 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_H
+#include "strings.h"
 
-# define PRINT_H
+char		*ft_strnew(size_t size)
+{
+	char	*area;
 
-# include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
-void	ft_putendl_fd(char const *s, int fd);
-void	ft_putendl(char const *s);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
-void	ft_putstr_fd(char const *s, int fd);
-void	ft_putstr(char const *s);
-
-#endif
+	area = (char *)malloc(sizeof(char) * (size + 1));
+	if (!area)
+		return (NULL);
+	ft_memset(area, '\0', (size + 1));
+	return (area);
+}

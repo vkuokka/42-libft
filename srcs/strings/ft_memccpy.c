@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.h                                            :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:02 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:02:04 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/16 12:29:37 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:06:39 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_H
+#include "strings.h"
 
-# define PRINT_H
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	size_t				i;
+	const unsigned char	*csrc;
+	unsigned char		*cdst;
 
-# include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
-void	ft_putendl_fd(char const *s, int fd);
-void	ft_putendl(char const *s);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
-void	ft_putstr_fd(char const *s, int fd);
-void	ft_putstr(char const *s);
-
-#endif
+	if (!dst && !src)
+		return (NULL);
+	i = 0;
+	csrc = (const unsigned char *)src;
+	cdst = (unsigned char *)dst;
+	while (i < n)
+	{
+		cdst[i] = csrc[i];
+		if (csrc[i] == (unsigned char)c)
+			return (dst + i + 1);
+		i++;
+	}
+	return (NULL);
+}

@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 12:04:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:06:03 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/17 14:21:04 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:08:08 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "print.h"
 #include "strings.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	if (!ft_strlen(needle))
+		return ((char *)haystack);
+	while (haystack[i] && i < len)
+	{
+		if (haystack[i] == needle[j])
+		{
+			while (haystack[i + j] == needle[j] && (i + j) < len)
+			{
+				if (!needle[j + 1])
+					return ((char *)haystack + i);
+				j++;
+			}
+			j = 0;
+		}
+		i++;
+	}
+	return (NULL);
 }

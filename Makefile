@@ -6,33 +6,33 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/05/16 20:56:48 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/05/17 12:00:45 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =	libft.a
 
-SRCS =	srcs/array/ft_arrfree.c \
-		srcs/array/ft_arriter.c \
-		srcs/ctype/ft_isalnum.c \
-		srcs/ctype/ft_isalpha.c \
-		srcs/ctype/ft_isascii.c \
-		srcs/ctype/ft_iscntrl.c \
-		srcs/ctype/ft_isdigit.c \
-		srcs/ctype/ft_isgraph.c \
-		srcs/ctype/ft_islower.c \
-		srcs/ctype/ft_isprint.c \
-		srcs/ctype/ft_ispunct.c \
-		srcs/ctype/ft_isspace.c \
-		srcs/ctype/ft_isspace.c \
-		srcs/ctype/ft_isupper.c \
-		srcs/ctype/ft_tolower.c \
-		srcs/ctype/ft_toupper.c \
-		srcs/integer/ft_atoi.c \
-		srcs/integer/ft_count_digits.c \
-		srcs/integer/ft_ftoa.c \
-		srcs/integer/ft_itoa_base.c \
-		srcs/integer/ft_itoa.c \
+SRCS =	srcs/arrays/ft_arrfree.c \
+		srcs/arrays/ft_arriter.c \
+		srcs/ctypes/ft_isalnum.c \
+		srcs/ctypes/ft_isalpha.c \
+		srcs/ctypes/ft_isascii.c \
+		srcs/ctypes/ft_iscntrl.c \
+		srcs/ctypes/ft_isdigit.c \
+		srcs/ctypes/ft_isgraph.c \
+		srcs/ctypes/ft_islower.c \
+		srcs/ctypes/ft_isprint.c \
+		srcs/ctypes/ft_ispunct.c \
+		srcs/ctypes/ft_isspace.c \
+		srcs/ctypes/ft_isspace.c \
+		srcs/ctypes/ft_isupper.c \
+		srcs/ctypes/ft_tolower.c \
+		srcs/ctypes/ft_toupper.c \
+		srcs/numbers/ft_atoi.c \
+		srcs/numbers/ft_count_digits.c \
+		srcs/numbers/ft_ftoa.c \
+		srcs/numbers/ft_itoa_base.c \
+		srcs/numbers/ft_itoa.c \
 		srcs/lst/ft_del.c \
 		srcs/lst/ft_lstadd.c \
 		srcs/lst/ft_lstaddback.c \
@@ -50,43 +50,43 @@ SRCS =	srcs/array/ft_arrfree.c \
 		srcs/print/ft_putnbr.c \
 		srcs/print/ft_putstr_fd.c \
 		srcs/print/ft_putstr.c \
-		srcs/string/ft_bzero.c \
-		srcs/string/ft_memalloc.c \
-		srcs/string/ft_memccpy.c \
-		srcs/string/ft_memchr.c \
-		srcs/string/ft_memcmp.c \
-		srcs/string/ft_memcpy.c \
-		srcs/string/ft_memdel.c \
-		srcs/string/ft_memmove.c \
-		srcs/string/ft_memset.c \
-		srcs/string/ft_strcat.c \
-		srcs/string/ft_strchr.c \
-		srcs/string/ft_strclen.c \
-		srcs/string/ft_strclr.c \
-		srcs/string/ft_strcmp.c \
-		srcs/string/ft_strcpy.c \
-		srcs/string/ft_strdel.c \
-		srcs/string/ft_strdup.c \
-		srcs/string/ft_strequ.c \
-		srcs/string/ft_striter.c \
-		srcs/string/ft_striteri.c \
-		srcs/string/ft_strjoin.c \
-		srcs/string/ft_strlcat.c \
-		srcs/string/ft_strlen.c \
-		srcs/string/ft_strmap.c \
-		srcs/string/ft_strmapi.c \
-		srcs/string/ft_strncat.c \
-		srcs/string/ft_strncmp.c \
-		srcs/string/ft_strncpy.c \
-		srcs/string/ft_strnequ.c \
-		srcs/string/ft_strnew.c \
-		srcs/string/ft_strnstr.c \
-		srcs/string/ft_strrchr.c \
-		srcs/string/ft_strsplit.c \
-		srcs/string/ft_strspn.c \
-		srcs/string/ft_strstr.c \
-		srcs/string/ft_strsub.c \
-		srcs/string/ft_strtrim.c \
+		srcs/strings/ft_bzero.c \
+		srcs/strings/ft_memalloc.c \
+		srcs/strings/ft_memccpy.c \
+		srcs/strings/ft_memchr.c \
+		srcs/strings/ft_memcmp.c \
+		srcs/strings/ft_memcpy.c \
+		srcs/strings/ft_memdel.c \
+		srcs/strings/ft_memmove.c \
+		srcs/strings/ft_memset.c \
+		srcs/strings/ft_strcat.c \
+		srcs/strings/ft_strchr.c \
+		srcs/strings/ft_strclen.c \
+		srcs/strings/ft_strclr.c \
+		srcs/strings/ft_strcmp.c \
+		srcs/strings/ft_strcpy.c \
+		srcs/strings/ft_strdel.c \
+		srcs/strings/ft_strdup.c \
+		srcs/strings/ft_strequ.c \
+		srcs/strings/ft_striter.c \
+		srcs/strings/ft_striteri.c \
+		srcs/strings/ft_strjoin.c \
+		srcs/strings/ft_strlcat.c \
+		srcs/strings/ft_strlen.c \
+		srcs/strings/ft_strmap.c \
+		srcs/strings/ft_strmapi.c \
+		srcs/strings/ft_strncat.c \
+		srcs/strings/ft_strncmp.c \
+		srcs/strings/ft_strncpy.c \
+		srcs/strings/ft_strnequ.c \
+		srcs/strings/ft_strnew.c \
+		srcs/strings/ft_strnstr.c \
+		srcs/strings/ft_strrchr.c \
+		srcs/strings/ft_strsplit.c \
+		srcs/strings/ft_strspn.c \
+		srcs/strings/ft_strstr.c \
+		srcs/strings/ft_strsub.c \
+		srcs/strings/ft_strtrim.c \
 		srcs/swap/ft_swap_char.c \
 		srcs/swap/ft_swap_str.c \
 		srcs/swap/ft_swap.c \

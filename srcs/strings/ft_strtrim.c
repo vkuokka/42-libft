@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/22 12:04:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:06:03 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/20 18:17:28 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:11:26 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "print.h"
 #include "strings.h"
+#include "ctypes.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+char		*ft_strtrim(char const *s)
 {
+	size_t	start;
+	size_t	end;
+
 	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
+		return (NULL);
+	start = 0;
+	while (ft_isspace(s[start]) && s[start])
+		start++;
+	if (s[start] == '\0')
+		return (ft_strnew(0));
+	end = ft_strlen(s);
+	while (ft_isspace(s[end - 1]))
+		end--;
+	if (start == end)
+		return (ft_strnew(0));
+	return (ft_strsub(s, (unsigned int)start, end - start));
 }

@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/23 13:48:05 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:04:46 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/20 18:17:18 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:08:25 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
 #include "strings.h"
 
-t_list		*ft_lstnew(void const *content, size_t content_size)
+char		*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	t_list	*node;
+	size_t	i;
+	char	*sub;
 
-	node = (t_list *)malloc(sizeof(t_list));
-	if (!node)
+	if (!s)
 		return (NULL);
-	if (!content)
-	{
-		node->content = NULL;
-		node->content_size = 0;
-		node->next = NULL;
-		return (node);
-	}
-	if (!(node->content = (void *)malloc(content_size)))
-	{
-		free(node);
+	sub = ft_strnew(len);
+	if (!sub)
 		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		sub[i] = s[start];
+		i++;
+		start++;
 	}
-	node->content = ft_memmove(node->content, content, content_size);
-	node->content_size = content_size;
-	node->next = NULL;
-	return (node);
+	sub[i] = '\0';
+	return (sub);
 }

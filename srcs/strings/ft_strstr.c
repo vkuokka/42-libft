@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.h                                            :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:02 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:02:04 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/17 13:47:55 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:08:22 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_H
+#include "strings.h"
 
-# define PRINT_H
+char		*ft_strstr(const char *haystack, const char *needle)
+{
+	size_t	i;
+	size_t	j;
 
-# include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
-void	ft_putendl_fd(char const *s, int fd);
-void	ft_putendl(char const *s);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
-void	ft_putstr_fd(char const *s, int fd);
-void	ft_putstr(char const *s);
-
-#endif
+	i = 0;
+	j = 0;
+	if (!ft_strlen(needle))
+		return ((char *)haystack);
+	while (haystack[i])
+	{
+		if (haystack[i] == needle[j])
+		{
+			while (haystack[i + j] == needle[j])
+			{
+				if (!needle[j + 1])
+					return ((char *)haystack + i);
+				j++;
+			}
+			j = 0;
+		}
+		i++;
+	}
+	return (NULL);
+}

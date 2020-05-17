@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.h                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:02 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:02:04 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/16 13:23:46 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/05/17 12:06:55 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINT_H
+#include "strings.h"
 
-# define PRINT_H
+void					*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t				i;
+	const unsigned char	*csrc;
+	unsigned char		*cdst;
 
-# include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd);
-void	ft_putchar(char c);
-void	ft_putendl_fd(char const *s, int fd);
-void	ft_putendl(char const *s);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putnbr(int n);
-void	ft_putstr_fd(char const *s, int fd);
-void	ft_putstr(char const *s);
-
-#endif
+	i = 0;
+	csrc = (const unsigned char*)src;
+	cdst = (unsigned char*)dst;
+	if (cdst > csrc)
+		while (0 < len)
+		{
+			cdst[len - 1] = csrc[len - 1];
+			len--;
+		}
+	else
+		while (i < len)
+		{
+			cdst[i] = csrc[i];
+			i++;
+		}
+	return (dst);
+}
