@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/26 10:25:51 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/16 19:48:19 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/06/22 13:14:30 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,13 @@ void		ft_lstaddback(t_list **alst, t_list *new)
 
 	if (!alst || !new)
 		return ;
-	cur_list = *alst;
-	while (cur_list->next)
-		cur_list = cur_list->next;
-	cur_list->next = new;
+	if (*alst == NULL)
+		*alst = new;
+	else
+	{
+		cur_list = *alst;
+		while (cur_list->next)
+			cur_list = cur_list->next;
+		cur_list->next = new;
+	}
 }
