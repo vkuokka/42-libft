@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 13:48:05 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:04:46 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/06/22 13:38:06 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ t_list		*ft_lstnew(void const *content, size_t content_size)
 		node->next = NULL;
 		return (node);
 	}
-	if (!(node->content = (void *)malloc(content_size)))
+	node->content = (void *)malloc(content_size);
+	if (!node->content)
 	{
 		free(node);
 		return (NULL);

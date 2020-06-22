@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/05/17 12:00:45 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/06/22 13:30:52 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -100,14 +100,21 @@ INCL =	includes/
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -I $(INCL) -c $(SRCS)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+	@echo "Creating object files.."
+	@gcc $(FLAGS) -I $(INCL) -c $(SRCS)
+	@echo "Creating library..."
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "Done"
 
 clean:
-	rm -f $(OBJ)
+	@echo "Removing object files..."
+	@rm -f $(OBJ)
+	@echo "Done"
 
 fclean: clean
-	rm -f $(NAME)
+	@echo "Removing library..."
+	@rm -f $(NAME)
+	@echo "Done"
 
 re: fclean all
