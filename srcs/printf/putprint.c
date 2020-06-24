@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numbers.h                                          :+:      :+:    :+:   */
+/*   putprint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:09 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:42:25 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/01/07 11:08:08 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/06/25 00:29:09 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NUMBERS_H
+#include "ft_printf.h"
+#include "strings.h"
+#include <unistd.h>
 
-# define NUMBERS_H
+int		putprint(char *print, int fd)
+{
+	int	len;
 
-int		ft_atoi(const char *str);
-int		ft_count_digits(long long nbr);
-char	*ft_ftoa(long double f, int pre);
-char	*ft_itoa_base(unsigned long long value, int base);
-char	*ft_itoa(long long n);
-
-#endif
+	len = ft_strlen(print);
+	write(fd, print, len);
+	free(print);
+	return (len);
+}

@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/06/24 23:53:47 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/06/25 00:26:58 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,18 @@ SRCS =	srcs/arrays/ft_arrfree.c \
 		srcs/print/ft_putnbr.c \
 		srcs/print/ft_putstr_fd.c \
 		srcs/print/ft_putstr.c \
+		srcs/printf/ft_printf.c \
+		srcs/printf/parse.c \
+		srcs/printf/parse_c.c \
+		srcs/printf/parse_s.c \
+		srcs/printf/parse_p.c \
+		srcs/printf/parse_di.c \
+		srcs/printf/parse_o.c \
+		srcs/printf/parse_u.c \
+		srcs/printf/parse_lower_x.c \
+		srcs/printf/parse_upper_x.c \
+		srcs/printf/parse_f.c \
+		srcs/printf/putprint.c \
 		srcs/strings/ft_bzero.c \
 		srcs/strings/ft_memalloc.c \
 		srcs/strings/ft_memccpy.c \
