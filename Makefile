@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/06/22 13:30:52 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/06/24 23:53:47 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,15 @@ SRCS =	srcs/arrays/ft_arrfree.c \
 		srcs/ctypes/ft_isupper.c \
 		srcs/ctypes/ft_tolower.c \
 		srcs/ctypes/ft_toupper.c \
+		srcs/dlst/ft_ddel.c \
+		srcs/dlst/ft_dlstadd.c \
+		srcs/dlst/ft_dlstaddback.c \
+		srcs/dlst/ft_dlstdel.c \
+		srcs/dlst/ft_dlstdelone.c \
+		srcs/dlst/ft_dlstiter.c \
+		srcs/dlst/ft_dlstlen.c \
+		srcs/dlst/ft_dlstmap.c \
+		srcs/dlst/ft_dlstnew.c \
 		srcs/numbers/ft_atoi.c \
 		srcs/numbers/ft_count_digits.c \
 		srcs/numbers/ft_ftoa.c \
