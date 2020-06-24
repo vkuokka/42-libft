@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/06/25 00:26:58 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/06/25 00:54:27 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,6 +111,7 @@ SRCS =	srcs/arrays/ft_arrfree.c \
 		srcs/swap/ft_swap_char.c \
 		srcs/swap/ft_swap_str.c \
 		srcs/swap/ft_swap.c \
+		srcs/get_next_line.c \
 
 OBJ =	$(notdir $(SRCS:.c=.o))
 
