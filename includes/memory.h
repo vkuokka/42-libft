@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   memory.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/15 17:01:54 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:06:28 by vkuokka          ###   ########.fr       */
+/*   Created: 2020/06/26 00:40:17 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/06/26 00:55:23 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
+#ifndef MEMORY_H
 
-void				ft_bzero(void *s, size_t n)
-{
-	unsigned char	*buff;
-	size_t			i;
+# define MEMORY_H
 
-	buff = (unsigned char*)s;
-	i = -1;
-	while (++i < n)
-		buff[i] = 0;
-}
+# include <stdlib.h>
+
+void	ft_bzero(void *s, size_t n);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
+
+#endif

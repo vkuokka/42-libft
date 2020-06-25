@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 13:23:46 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:06:55 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/16 12:00:32 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/06/26 00:41:42 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
+#include "memory.h"
 
-void					*ft_memmove(void *dst, const void *src, size_t len)
+void					*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t				i;
 	const unsigned char	*csrc;
 	unsigned char		*cdst;
 
-	i = 0;
+	i = -1;
 	csrc = (const unsigned char*)src;
 	cdst = (unsigned char*)dst;
-	if (cdst > csrc)
-		while (0 < len)
-		{
-			cdst[len - 1] = csrc[len - 1];
-			len--;
-		}
-	else
-		while (i < len)
-		{
-			cdst[i] = csrc[i];
-			i++;
-		}
+	while (++i < n)
+		cdst[i] = csrc[i];
 	return (dst);
 }

@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/15 16:27:57 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:07:00 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/20 18:15:19 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/06/26 00:41:48 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
+#include "memory.h"
 
-void				*ft_memset(void *b, int c, size_t len)
+void	ft_memdel(void **ap)
 {
-	unsigned char	*buff;
-	size_t			i;
-
-	buff = (unsigned char*)b;
-	i = -1;
-	while (++i < len)
-		buff[i] = c;
-	return (b);
+	if (!ap)
+		return ;
+	free(*ap);
+	*ap = NULL;
 }

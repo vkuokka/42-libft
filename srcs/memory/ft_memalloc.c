@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 14:03:55 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:06:41 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/20 18:15:12 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/06/26 00:41:01 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
+#include "memory.h"
 
-void					*ft_memchr(const void *s, int c, size_t n)
+void		*ft_memalloc(size_t size)
 {
-	size_t				i;
-	const unsigned char	*cs;
+	void	*area;
 
-	i = -1;
-	cs = (const unsigned char *)s;
-	while (++i < n)
-		if (cs[i] == c)
-			return ((void *)s + i);
-	return (NULL);
+	area = (void *)malloc(size);
+	if (!area)
+		return (NULL);
+	ft_bzero(area, size);
+	return (area);
 }

@@ -6,14 +6,19 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:15:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:07:12 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/06/26 00:53:51 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
+#include "memory.h"
 
-void	ft_strclr(char *s)
+void		ft_strclr(char *s)
 {
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
 	if (s)
-		ft_memset(s, '\0', ft_strlen(s));
+		ft_memset(s, '\0', i);
 }

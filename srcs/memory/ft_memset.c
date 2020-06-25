@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 12:29:37 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:06:39 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/15 16:27:57 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/06/26 00:42:02 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
+#include "memory.h"
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void				*ft_memset(void *b, int c, size_t len)
 {
-	size_t				i;
-	const unsigned char	*csrc;
-	unsigned char		*cdst;
+	unsigned char	*buff;
+	size_t			i;
 
-	if (!dst && !src)
-		return (NULL);
-	i = 0;
-	csrc = (const unsigned char *)src;
-	cdst = (unsigned char *)dst;
-	while (i < n)
-	{
-		cdst[i] = csrc[i];
-		if (csrc[i] == (unsigned char)c)
-			return (dst + i + 1);
-		i++;
-	}
-	return (NULL);
+	buff = (unsigned char*)b;
+	i = -1;
+	while (++i < len)
+		buff[i] = c;
+	return (b);
 }

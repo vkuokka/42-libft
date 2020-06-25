@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/06/25 00:54:27 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/06/26 00:55:49 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,15 @@ SRCS =	srcs/arrays/ft_arrfree.c \
 		srcs/lst/ft_lstlen.c \
 		srcs/lst/ft_lstmap.c \
 		srcs/lst/ft_lstnew.c \
+		srcs/memory/ft_bzero.c \
+		srcs/memory/ft_memalloc.c \
+		srcs/memory/ft_memccpy.c \
+		srcs/memory/ft_memchr.c \
+		srcs/memory/ft_memcmp.c \
+		srcs/memory/ft_memcpy.c \
+		srcs/memory/ft_memdel.c \
+		srcs/memory/ft_memmove.c \
+		srcs/memory/ft_memset.c \
 		srcs/print/ft_putchar_fd.c \
 		srcs/print/ft_putchar.c \
 		srcs/print/ft_putendl_fd.c \
@@ -71,15 +80,6 @@ SRCS =	srcs/arrays/ft_arrfree.c \
 		srcs/printf/parse_upper_x.c \
 		srcs/printf/parse_f.c \
 		srcs/printf/putprint.c \
-		srcs/strings/ft_bzero.c \
-		srcs/strings/ft_memalloc.c \
-		srcs/strings/ft_memccpy.c \
-		srcs/strings/ft_memchr.c \
-		srcs/strings/ft_memcmp.c \
-		srcs/strings/ft_memcpy.c \
-		srcs/strings/ft_memdel.c \
-		srcs/strings/ft_memmove.c \
-		srcs/strings/ft_memset.c \
 		srcs/strings/ft_strcat.c \
 		srcs/strings/ft_strchr.c \
 		srcs/strings/ft_strclen.c \

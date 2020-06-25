@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/16 14:25:39 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:06:47 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/15 17:01:54 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/06/26 00:40:52 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "strings.h"
+#include "memory.h"
 
-int						ft_memcmp(const void *s1, const void *s2, size_t n)
+void				ft_bzero(void *s, size_t n)
 {
-	size_t				i;
-	const unsigned char	*cs1;
-	const unsigned char	*cs2;
+	unsigned char	*buff;
+	size_t			i;
 
+	buff = (unsigned char*)s;
 	i = -1;
-	cs1 = (const unsigned char*)s1;
-	cs2 = (const unsigned char*)s2;
 	while (++i < n)
-		if (cs1[i] != cs2[i])
-			return (cs1[i] - cs2[i]);
-	return (0);
+		buff[i] = 0;
 }

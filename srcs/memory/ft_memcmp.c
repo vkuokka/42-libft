@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/20 18:17:07 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/26 00:44:46 by vkuokka          ###   ########.fr       */
+/*   Created: 2019/10/16 14:25:39 by vkuokka           #+#    #+#             */
+/*   Updated: 2020/06/26 00:41:25 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "memory.h"
 
-char		*ft_strnew(size_t size)
+int						ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	*area;
+	size_t				i;
+	const unsigned char	*cs1;
+	const unsigned char	*cs2;
 
-	area = (char *)malloc(sizeof(char) * (size + 1));
-	if (!area)
-		return (NULL);
-	ft_memset(area, '\0', (size + 1));
-	return (area);
+	i = -1;
+	cs1 = (const unsigned char*)s1;
+	cs2 = (const unsigned char*)s2;
+	while (++i < n)
+		if (cs1[i] != cs2[i])
+			return (cs1[i] - cs2[i]);
+	return (0);
 }

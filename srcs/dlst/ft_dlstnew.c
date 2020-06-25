@@ -6,12 +6,12 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 13:48:05 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/24 21:47:30 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/06/26 00:43:48 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dlst.h"
-#include "strings.h"
+#include "memory.h"
 
 t_dlist		*ft_dlstnew(void const *content, size_t content_size)
 {
