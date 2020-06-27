@@ -6,12 +6,12 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/03 16:17:50 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:30:33 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/06/27 13:28:25 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "string.h"
+#include "strings.h"
 #include "numbers.h"
 #include "swap.h"
 

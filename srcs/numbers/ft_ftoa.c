@@ -6,11 +6,11 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 10:07:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:05:28 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/06/27 13:28:27 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "string.h"
+#include "strings.h"
 #include "numbers.h"
 
 static long double		round_decimal(int precision, long double f)
