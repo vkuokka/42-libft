@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/06/26 00:55:49 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/06/29 14:22:54 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,6 +103,7 @@ SRCS =	srcs/arrays/ft_arrfree.c \
 		srcs/strings/ft_strnew.c \
 		srcs/strings/ft_strnstr.c \
 		srcs/strings/ft_strrchr.c \
+		srcs/strings/ft_strreplace.c \
 		srcs/strings/ft_strsplit.c \
 		srcs/strings/ft_strspn.c \
 		srcs/strings/ft_strstr.c \
