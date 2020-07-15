@@ -6,13 +6,13 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/24 10:35:29 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/24 21:50:31 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/07/15 14:51:43 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dlst.h"
 
-t_dlist		*ft_lstmap(t_dlist *dlst, t_dlist *(*f)(t_dlist *elem))
+t_dlist		*ft_dlstmap(t_dlist *dlst, t_dlist *(*f)(t_dlist *elem))
 {
 	t_dlist	*node;
 	t_dlist	*head;
