@@ -6,12 +6,12 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/24 10:42:50 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/09/27 10:43:00 by vkuokka          ###   ########.fr       */
+/*   Updated: 2020/09/24 17:12:53 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBRARY_H
-# define LIBRARY_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
 # include "arrays.h"
 # include "ctypes.h"
