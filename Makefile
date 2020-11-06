@@ -6,139 +6,129 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/07/01 15:20:19 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/11/06 14:24:51 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =	libft.a
+name = libft.a
+src = src/arrays/ft_arrfree.c \
+	src/arrays/ft_arriter.c \
+	src/ctypes/ft_isalnum.c \
+	src/ctypes/ft_isalpha.c \
+	src/ctypes/ft_isascii.c \
+	src/ctypes/ft_iscntrl.c \
+	src/ctypes/ft_isdigit.c \
+	src/ctypes/ft_isgraph.c \
+	src/ctypes/ft_islower.c \
+	src/ctypes/ft_isprint.c \
+	src/ctypes/ft_ispunct.c \
+	src/ctypes/ft_isspace.c \
+	src/ctypes/ft_isspace.c \
+	src/ctypes/ft_isupper.c \
+	src/ctypes/ft_tolower.c \
+	src/ctypes/ft_toupper.c \
+	src/dlst/ft_ddel.c \
+	src/dlst/ft_dlstadd.c \
+	src/dlst/ft_dlstaddback.c \
+	src/dlst/ft_dlstdel.c \
+	src/dlst/ft_dlstdelone.c \
+	src/dlst/ft_dlstiter.c \
+	src/dlst/ft_dlstlen.c \
+	src/dlst/ft_dlstmap.c \
+	src/dlst/ft_dlstnew.c \
+	src/numbers/ft_atoi.c \
+	src/numbers/ft_count_digits.c \
+	src/numbers/ft_ftoa.c \
+	src/numbers/ft_itoa_base.c \
+	src/numbers/ft_itoa.c \
+	src/lst/ft_del.c \
+	src/lst/ft_lstadd.c \
+	src/lst/ft_lstaddback.c \
+	src/lst/ft_lstdel.c \
+	src/lst/ft_lstdelone.c \
+	src/lst/ft_lstiter.c \
+	src/lst/ft_lstlen.c \
+	src/lst/ft_lstmap.c \
+	src/lst/ft_lstnew.c \
+	src/memory/ft_bzero.c \
+	src/memory/ft_memalloc.c \
+	src/memory/ft_memccpy.c \
+	src/memory/ft_memchr.c \
+	src/memory/ft_memcmp.c \
+	src/memory/ft_memcpy.c \
+	src/memory/ft_memdel.c \
+	src/memory/ft_memmove.c \
+	src/memory/ft_memset.c \
+	src/print/ft_putchar_fd.c \
+	src/print/ft_putchar.c \
+	src/print/ft_putendl_fd.c \
+	src/print/ft_putendl.c \
+	src/print/ft_putnbr_fd.c \
+	src/print/ft_putnbr.c \
+	src/print/ft_putstr_fd.c \
+	src/print/ft_putstr.c \
+	src/printf/ft_dprintf.c \
+	src/printf/ft_printf.c \
+	src/printf/parse.c \
+	src/printf/parse_c.c \
+	src/printf/parse_s.c \
+	src/printf/parse_p.c \
+	src/printf/parse_di.c \
+	src/printf/parse_o.c \
+	src/printf/parse_u.c \
+	src/printf/parse_lower_x.c \
+	src/printf/parse_upper_x.c \
+	src/printf/parse_f.c \
+	src/printf/putprint.c \
+	src/strings/ft_strcat.c \
+	src/strings/ft_strchr.c \
+	src/strings/ft_strclen.c \
+	src/strings/ft_strclr.c \
+	src/strings/ft_strcmp.c \
+	src/strings/ft_strcpy.c \
+	src/strings/ft_strdel.c \
+	src/strings/ft_strdup.c \
+	src/strings/ft_strequ.c \
+	src/strings/ft_striter.c \
+	src/strings/ft_striteri.c \
+	src/strings/ft_strjoin.c \
+	src/strings/ft_strlcat.c \
+	src/strings/ft_strlen.c \
+	src/strings/ft_strmap.c \
+	src/strings/ft_strmapi.c \
+	src/strings/ft_strncat.c \
+	src/strings/ft_strncmp.c \
+	src/strings/ft_strncpy.c \
+	src/strings/ft_strnequ.c \
+	src/strings/ft_strnew.c \
+	src/strings/ft_strnstr.c \
+	src/strings/ft_strrchr.c \
+	src/strings/ft_strreplace.c \
+	src/strings/ft_strsplit.c \
+	src/strings/ft_strspn.c \
+	src/strings/ft_strstr.c \
+	src/strings/ft_strsub.c \
+	src/strings/ft_strtrim.c \
+	src/swap/ft_swap_char.c \
+	src/swap/ft_swap_str.c \
+	src/swap/ft_swap.c \
+	src/get_next_line.c
+obj = $(notdir $(src:.c=.o))
+flags = -Wall -Werror -Wextra
+inc = inc/
 
-SRCS =	srcs/arrays/ft_arrfree.c \
-		srcs/arrays/ft_arriter.c \
-		srcs/ctypes/ft_isalnum.c \
-		srcs/ctypes/ft_isalpha.c \
-		srcs/ctypes/ft_isascii.c \
-		srcs/ctypes/ft_iscntrl.c \
-		srcs/ctypes/ft_isdigit.c \
-		srcs/ctypes/ft_isgraph.c \
-		srcs/ctypes/ft_islower.c \
-		srcs/ctypes/ft_isprint.c \
-		srcs/ctypes/ft_ispunct.c \
-		srcs/ctypes/ft_isspace.c \
-		srcs/ctypes/ft_isspace.c \
-		srcs/ctypes/ft_isupper.c \
-		srcs/ctypes/ft_tolower.c \
-		srcs/ctypes/ft_toupper.c \
-		srcs/dlst/ft_ddel.c \
-		srcs/dlst/ft_dlstadd.c \
-		srcs/dlst/ft_dlstaddback.c \
-		srcs/dlst/ft_dlstdel.c \
-		srcs/dlst/ft_dlstdelone.c \
-		srcs/dlst/ft_dlstiter.c \
-		srcs/dlst/ft_dlstlen.c \
-		srcs/dlst/ft_dlstmap.c \
-		srcs/dlst/ft_dlstnew.c \
-		srcs/numbers/ft_atoi.c \
-		srcs/numbers/ft_count_digits.c \
-		srcs/numbers/ft_ftoa.c \
-		srcs/numbers/ft_itoa_base.c \
-		srcs/numbers/ft_itoa.c \
-		srcs/lst/ft_del.c \
-		srcs/lst/ft_lstadd.c \
-		srcs/lst/ft_lstaddback.c \
-		srcs/lst/ft_lstdel.c \
-		srcs/lst/ft_lstdelone.c \
-		srcs/lst/ft_lstiter.c \
-		srcs/lst/ft_lstlen.c \
-		srcs/lst/ft_lstmap.c \
-		srcs/lst/ft_lstnew.c \
-		srcs/memory/ft_bzero.c \
-		srcs/memory/ft_memalloc.c \
-		srcs/memory/ft_memccpy.c \
-		srcs/memory/ft_memchr.c \
-		srcs/memory/ft_memcmp.c \
-		srcs/memory/ft_memcpy.c \
-		srcs/memory/ft_memdel.c \
-		srcs/memory/ft_memmove.c \
-		srcs/memory/ft_memset.c \
-		srcs/print/ft_putchar_fd.c \
-		srcs/print/ft_putchar.c \
-		srcs/print/ft_putendl_fd.c \
-		srcs/print/ft_putendl.c \
-		srcs/print/ft_putnbr_fd.c \
-		srcs/print/ft_putnbr.c \
-		srcs/print/ft_putstr_fd.c \
-		srcs/print/ft_putstr.c \
-		srcs/printf/ft_dprintf.c \
-		srcs/printf/ft_printf.c \
-		srcs/printf/parse.c \
-		srcs/printf/parse_c.c \
-		srcs/printf/parse_s.c \
-		srcs/printf/parse_p.c \
-		srcs/printf/parse_di.c \
-		srcs/printf/parse_o.c \
-		srcs/printf/parse_u.c \
-		srcs/printf/parse_lower_x.c \
-		srcs/printf/parse_upper_x.c \
-		srcs/printf/parse_f.c \
-		srcs/printf/putprint.c \
-		srcs/strings/ft_strcat.c \
-		srcs/strings/ft_strchr.c \
-		srcs/strings/ft_strclen.c \
-		srcs/strings/ft_strclr.c \
-		srcs/strings/ft_strcmp.c \
-		srcs/strings/ft_strcpy.c \
-		srcs/strings/ft_strdel.c \
-		srcs/strings/ft_strdup.c \
-		srcs/strings/ft_strequ.c \
-		srcs/strings/ft_striter.c \
-		srcs/strings/ft_striteri.c \
-		srcs/strings/ft_strjoin.c \
-		srcs/strings/ft_strlcat.c \
-		srcs/strings/ft_strlen.c \
-		srcs/strings/ft_strmap.c \
-		srcs/strings/ft_strmapi.c \
-		srcs/strings/ft_strncat.c \
-		srcs/strings/ft_strncmp.c \
-		srcs/strings/ft_strncpy.c \
-		srcs/strings/ft_strnequ.c \
-		srcs/strings/ft_strnew.c \
-		srcs/strings/ft_strnstr.c \
-		srcs/strings/ft_strrchr.c \
-		srcs/strings/ft_strreplace.c \
-		srcs/strings/ft_strsplit.c \
-		srcs/strings/ft_strspn.c \
-		srcs/strings/ft_strstr.c \
-		srcs/strings/ft_strsub.c \
-		srcs/strings/ft_strtrim.c \
-		srcs/swap/ft_swap_char.c \
-		srcs/swap/ft_swap_str.c \
-		srcs/swap/ft_swap.c \
-		srcs/get_next_line.c \
-
-OBJ =	$(notdir $(SRCS:.c=.o))
-
-FLAGS = -Wall -Werror -Wextra
-
-INCL =	includes/
-
-all: $(NAME)
-
-$(NAME):
-	@echo "Creating object files.."
-	@gcc $(FLAGS) -I $(INCL) -c $(SRCS)
-	@echo "Creating library..."
-	@ar rc $(NAME) $(OBJ)
-	@ranlib $(NAME)
-	@echo "Done"
+all:
+	@echo "Creating $(name) ..."
+	@gcc $(flags) -I $(inc) -c $(src)
+	@ar rc $(name) $(obj)
+	@ranlib $(name)
 
 clean:
-	@echo "Removing object files..."
-	@rm -f $(OBJ)
-	@echo "Done"
+	@echo "Removing $(name) object files ..."
+	@rm -f $(obj)
 
 fclean: clean
-	@echo "Removing library..."
-	@rm -f $(NAME)
-	@echo "Done"
+	@echo "Removing $(name) ..."
+	@rm -f $(name)
 
 re: fclean all
