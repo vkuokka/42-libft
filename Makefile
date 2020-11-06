@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/11/06 14:24:51 by vkuokka          ###   ########.fr        #
+#    Updated: 2020/11/06 14:42:59 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,14 +114,15 @@ src = src/arrays/ft_arrfree.c \
 	src/swap/ft_swap.c \
 	src/get_next_line.c
 obj = $(notdir $(src:.c=.o))
-flags = -Wall -Werror -Wextra
 inc = inc/
+flags = -Wall -Werror -Wextra
 
 all:
 	@echo "Creating $(name) ..."
 	@gcc $(flags) -I $(inc) -c $(src)
 	@ar rc $(name) $(obj)
 	@ranlib $(name)
+	@echo Success!
 
 clean:
 	@echo "Removing $(name) object files ..."
