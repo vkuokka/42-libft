@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: vesa <vesa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 14:18:48 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:37:06 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/02/24 14:57:00 by vesa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int			ft_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
-			format = parse(1, format, last, &p);
+			format = pfparse(1, format, last, &p);
 		else
 		{
 			write(1, format, 1);

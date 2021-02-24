@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numbers.h                                          :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:09 by vkuokka           #+#    #+#             */
-/*   Updated: 2021/02/24 15:06:47 by vkuokka          ###   ########.fr       */
+/*   Created: 2021/02/24 15:13:16 by vkuokka           #+#    #+#             */
+/*   Updated: 2021/02/24 15:17:43 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NUMBERS_H
+#include <stdlib.h>
+#include <memory.h>
 
-# define NUMBERS_H
+void		*ft_realloc(void *ptr, size_t old_s, size_t new_s)
+{
+	void	*new;
 
-# include <stdint.h>
-
-int		ft_atoi(const char *str);
-size_t	ft_count_digits_only(uintmax_t n, int base);
-int		ft_count_digits(long long nbr);
-char	*ft_ftoa(long double f, int pre);
-char	*ft_itoa_base(unsigned long long value, int base);
-char	*ft_itoa(long long n);
-
-#endif
+	if (!ptr)
+		return (NULL);
+	if (!(new = ft_memalloc(new_s + 1)))
+	{
+		free(ptr);
+		return (NULL);
+	}
+	ft_memcpy(new, ptr, old_s < new_s ? old_s : new_s);
+	free(ptr);
+	return (new);
+}

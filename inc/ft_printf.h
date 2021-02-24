@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: vesa <vesa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 12:41:51 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:36:53 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/02/24 14:58:46 by vesa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct		s_memo
 
 int					ft_printf(const char *format, ...);
 int					ft_dprintf(int fd, const char *format, ...);
-const char			*parse(int fd, const char *format, va_list last, int *p);
+const char			*pfparse(int fd, const char *format, va_list last, int *p);
 int					parse_c(int c, t_memo *memo);
 int					parse_s(va_list last, t_memo *memo);
 int					parse_p(va_list last, t_memo *memo);

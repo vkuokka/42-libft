@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 19:02:47 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/29 15:54:20 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/02/24 15:08:37 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_lens
 	int			count;
 }				t_lens;
 
+int				ft_lfind(const char *s, int c);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strchr(const char *s, int c);
 size_t			ft_strclen(const char *s, int c);

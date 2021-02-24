@@ -6,7 +6,7 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2020/11/06 14:42:59 by vkuokka          ###   ########.fr        #
+#    Updated: 2021/02/24 15:16:43 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ src = src/arrays/ft_arrfree.c \
 	src/dlst/ft_dlstmap.c \
 	src/dlst/ft_dlstnew.c \
 	src/numbers/ft_atoi.c \
+	src/numbers/ft_count_digits_only.c \
 	src/numbers/ft_count_digits.c \
 	src/numbers/ft_ftoa.c \
 	src/numbers/ft_itoa_base.c \
@@ -59,7 +60,9 @@ src = src/arrays/ft_arrfree.c \
 	src/memory/ft_memdel.c \
 	src/memory/ft_memmove.c \
 	src/memory/ft_memset.c \
+	src/memory/ft_realloc.c \
 	src/print/ft_putchar_fd.c \
+	src/print/ft_print_bits.c \
 	src/print/ft_putchar.c \
 	src/print/ft_putendl_fd.c \
 	src/print/ft_putendl.c \
@@ -80,6 +83,7 @@ src = src/arrays/ft_arrfree.c \
 	src/printf/parse_upper_x.c \
 	src/printf/parse_f.c \
 	src/printf/putprint.c \
+	src/strings/ft_lfind.c \
 	src/strings/ft_strcat.c \
 	src/strings/ft_strchr.c \
 	src/strings/ft_strclen.c \

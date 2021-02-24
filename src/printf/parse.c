@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: vesa <vesa@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/03 16:17:07 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:37:03 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/02/24 14:57:14 by vesa             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ static t_memo		*get_wp(t_memo *memo, va_list last)
 	return (memo);
 }
 
-const char			*parse(int fd, const char *format, va_list last, int *p)
+const char			*pfparse(int fd, const char *format, va_list last, int *p)
 {
 	t_memo			*memo;
 

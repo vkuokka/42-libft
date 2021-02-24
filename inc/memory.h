@@ -6,7 +6,7 @@
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/26 00:40:17 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/07/08 16:05:12 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/02/24 15:14:02 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	ft_memdel(void **ap);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_realloc(void *ptr, size_t old_s, size_t new_s);
 
 #endif

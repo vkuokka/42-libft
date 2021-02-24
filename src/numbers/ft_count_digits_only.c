@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   numbers.h                                          :+:      :+:    :+:   */
+/*   ft_count_digits_only.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/17 12:02:09 by vkuokka           #+#    #+#             */
-/*   Updated: 2021/02/24 15:06:47 by vkuokka          ###   ########.fr       */
+/*   Created: 2021/02/24 15:02:21 by vesa              #+#    #+#             */
+/*   Updated: 2021/02/24 15:05:58 by vkuokka          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NUMBERS_H
+#include <stdint.h>
+#include <stddef.h>
 
-# define NUMBERS_H
+size_t		ft_count_digits_only(uintmax_t n, int base)
+{
+	size_t	i;
 
-# include <stdint.h>
-
-int		ft_atoi(const char *str);
-size_t	ft_count_digits_only(uintmax_t n, int base);
-int		ft_count_digits(long long nbr);
-char	*ft_ftoa(long double f, int pre);
-char	*ft_itoa_base(unsigned long long value, int base);
-char	*ft_itoa(long long n);
-
-#endif
+	i = 0;
+	if (n == 0)
+		return (1);
+	while (n)
+	{
+		i++;
+		n /= base;
+	}
+	return (i);
+}
