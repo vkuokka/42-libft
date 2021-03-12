@@ -6,13 +6,14 @@
 #    By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/18 11:41:03 by vkuokka           #+#    #+#              #
-#    Updated: 2021/02/24 15:16:43 by vkuokka          ###   ########.fr        #
+#    Updated: 2021/03/12 11:51:14 by vkuokka          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 name = libft.a
 src = src/arrays/ft_arrfree.c \
 	src/arrays/ft_arriter.c \
+	src/arrays/ft_arrlen.c \
 	src/ctypes/ft_isalnum.c \
 	src/ctypes/ft_isalpha.c \
 	src/ctypes/ft_isascii.c \
