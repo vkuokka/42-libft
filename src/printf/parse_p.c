@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_p.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/03 16:07:07 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:32:11 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:25:08 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,19 @@
 #include "numbers.h"
 #include "swap.h"
 
-static char			*parse_p_padding(char *p, t_memo *memo)
+static char	*parse_p_padding(char *p, t_memo *memo)
 {
 	int				i;
 	char			*tmp;
 	char			*ad;
 	char			c;
 
-	if (!memo->width || (0 > (i = ft_atoi(memo->width) - ft_strlen(p))))
+	i = ft_atoi(memo->width) - ft_strlen(p);
+	if (!memo->width || (0 > i))
 		return (p);
 	c = ' ';
-	memo->zero && !memo->minus ? c = '0' : 0;
+	if (memo->zero && !memo->minus)
+		c = '0';
 	ad = ft_strnew(i);
 	while (i > 0)
 		ad[--i] = c;
@@ -34,8 +36,10 @@ static char			*parse_p_padding(char *p, t_memo *memo)
 		p = ft_strjoin(p, ad);
 	else
 	{
-		ad[0] == '0' && ad[1] && p[1] == 'x' ? ft_swap_char(&p[1], &ad[1]) : 0;
-		ad[0] == '0' && !ad[1] && p[1] == 'x' ? ft_swap_char(&p[1], &p[0]) : 0;
+		if (ad[0] == '0' && ad[1] && p[1] == 'x')
+			ft_swap_char(&p[1], &ad[1]);
+		if (ad[0] == '0' && !ad[1] && p[1] == 'x')
+			ft_swap_char(&p[1], &p[0]);
 		p = ft_strjoin(ad, p);
 	}
 	free(ad);
@@ -43,7 +47,7 @@ static char			*parse_p_padding(char *p, t_memo *memo)
 	return (p);
 }
 
-int					parse_p(va_list last, t_memo *memo)
+int	parse_p(va_list last, t_memo *memo)
 {
 	char			*tmp;
 	char			*print;

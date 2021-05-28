@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 11:47:50 by vkuokka           #+#    #+#             */
-/*   Updated: 2021/03/12 12:56:23 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:26:34 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-size_t		ft_arrlen(char **array, size_t max)
+size_t	ft_arrlen(char **array, size_t max)
 {
 	size_t	i;
 

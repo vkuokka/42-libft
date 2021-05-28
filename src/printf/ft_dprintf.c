@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vesa <vesa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/25 00:19:23 by vkuokka           #+#    #+#             */
-/*   Updated: 2021/02/24 14:56:48 by vesa             ###   ########.fr       */
+/*   Updated: 2021/05/28 15:47:25 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <unistd.h>
 
-int			ft_dprintf(int fd, const char *format, ...)
+int	ft_dprintf(int fd, const char *format, ...)
 {
 	va_list	last;
 	int		p;

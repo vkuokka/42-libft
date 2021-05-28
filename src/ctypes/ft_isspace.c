@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 16:57:59 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/13 16:38:11 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:26:07 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isspace(int c)
 {
-	if (c == ' ' || c == '\n' || c == '\t' ||
-	c == '\v' || c == '\r' || c == '\f')
+	if (c == ' ' || c == '\n' || c == '\t'
+		|| c == '\v' || c == '\r' || c == '\f')
 		return (1);
 	return (0);
 }

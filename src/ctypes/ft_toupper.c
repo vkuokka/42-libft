@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:00:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:03:43 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:25:38 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ctypes.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (ft_islower(c))
 		return (c - 32);

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_dlstdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 14:10:42 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/24 21:56:21 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:25:16 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "dlst.h"
 
-void		ft_dlstdel(t_dlist **alst, void (*del)(void *, size_t))
+void	ft_dlstdel(t_dlist **alst, void (*del)(void *, size_t))
 {
 	t_dlist	*current;
 	t_dlist	*next;

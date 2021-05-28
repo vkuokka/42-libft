@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 14:48:27 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/16 20:29:00 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 14:53:23 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void		ft_swap_str(char **a, char **b)
+void	ft_swap_str(char **a, char **b)
 {
 	char	*tmp;
 

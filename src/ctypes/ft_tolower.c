@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 17:14:16 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:03:40 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:25:43 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ctypes.h"
 
-int		ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if (ft_isupper(c))
 		return (c + 32);

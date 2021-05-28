@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:17:07 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/26 00:44:46 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:07:54 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "memory.h"
 
-char		*ft_strnew(size_t size)
+char	*ft_strnew(size_t size)
 {
 	char	*area;
 

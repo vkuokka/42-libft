@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_ftoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 10:07:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/27 13:28:27 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:15:46 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "strings.h"
 #include "numbers.h"
 
-static long double		round_decimal(int precision, long double f)
+static long double	round_decimal(int precision, long double f)
 {
 	long double			round;
 	int					d;
@@ -27,7 +27,7 @@ static long double		round_decimal(int precision, long double f)
 	return (round);
 }
 
-static char				*fraction(int pre, long double f,
+static char	*fraction(int pre, long double f,
 						unsigned long long dec)
 {
 	int					i;
@@ -46,7 +46,7 @@ static char				*fraction(int pre, long double f,
 	return (fpart);
 }
 
-char					*ft_ftoa(long double f, int pre)
+char	*ft_ftoa(long double f, int pre)
 {
 	unsigned long long	dec;
 	char				*ipart;
@@ -55,12 +55,14 @@ char					*ft_ftoa(long double f, int pre)
 	int					neg;
 
 	neg = 0;
-	f < 0 ? neg = 1 : 0;
+	if (f < 0)
+		neg = 1;
 	f = f + round_decimal(pre, f);
 	f *= (f < 0) ? -1 : 1;
 	dec = f;
 	ipart = ft_itoa(dec);
-	f = pre ? (f - dec) : 0;
+	if (pre)
+		f = (f - dec);
 	fpart = fraction(pre, f, dec);
 	joint = ft_strjoin(ipart, fpart);
 	free(ipart);

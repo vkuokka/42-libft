@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   putprint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 11:08:08 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:29:09 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:12:12 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "strings.h"
 #include <unistd.h>
 
-int		putprint(char *print, int fd)
+int	putprint(char *print, int fd)
 {
 	int	len;
 

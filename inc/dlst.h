@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dlst.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/24 21:43:06 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/24 22:01:55 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:31:45 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 # include <stdlib.h>
 
-typedef struct		s_dlist
+typedef struct s_dlist
 {
 	void			*content;
 	size_t			content_size;

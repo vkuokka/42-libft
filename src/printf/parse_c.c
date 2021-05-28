@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_c.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/03 16:17:39 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:33:40 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 16:47:02 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@
 #include "numbers.h"
 #include <unistd.h>
 
-static char			*parse_c_padding(char *print, t_memo *memo)
+static char	*parse_c_padding(char *print, t_memo *memo)
 {
 	int				i;
 	char			*tmp;
 	char			*pad;
 	char			c;
 
-	if (!memo->width || (0 > (i = ft_atoi(memo->width) - ft_strlen(print))))
+	i = ft_atoi(memo->width) - ft_strlen(print);
+	if (!memo->width || (0 > i))
 		return (print);
 	c = ' ';
-	memo->zero && !memo->minus ? c = '0' : 0;
+	if (memo->zero && !memo->minus)
+		c = '0';
 	pad = ft_strnew(i);
 	while (i > 0)
 		pad[--i] = c;
@@ -40,7 +42,7 @@ static char			*parse_c_padding(char *print, t_memo *memo)
 	return (print);
 }
 
-int					parse_c(int c, t_memo *memo)
+int	parse_c(int c, t_memo *memo)
 {
 	char			*print;
 	int				len;

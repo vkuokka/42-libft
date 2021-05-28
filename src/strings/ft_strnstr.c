@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 14:21:04 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/29 15:55:01 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:07:23 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "strings.h"
 
-char		*ft_strnstr(const char *hay, const char *needle, size_t len)
+char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;

@@ -3,19 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_count_digits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 11:48:08 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/16 20:26:20 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:16:56 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_count_digits(long long nbr)
+int	ft_count_digits(long long nbr)
 {
 	int	count;
 
 	count = 1;
-	while (nbr /= 10)
+	while (1)
+	{
+		nbr /= 10;
+		if (nbr < 10)
+			break ;
 		count++;
+	}
 	return (count);
 }
