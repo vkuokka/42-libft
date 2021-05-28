@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 10:39:11 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:07:09 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:09:07 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "strings.h"
 
-size_t		ft_strclen(const char *s, int c)
+size_t	ft_strclen(const char *s, int c)
 {
 	size_t	i;
 

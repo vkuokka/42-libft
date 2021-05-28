@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/22 11:44:52 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/16 19:28:45 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:47:51 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "print.h"
 
-void		ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
 	long	n2;
 

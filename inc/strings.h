@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strings.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/13 19:02:47 by vkuokka           #+#    #+#             */
-/*   Updated: 2021/02/24 15:08:37 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:32:36 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 # include <stdlib.h>
 
-typedef struct	s_lens
+typedef struct s_lens
 {
 	int			len_org;
 	int			len_rep;

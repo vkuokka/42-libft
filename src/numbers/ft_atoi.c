@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 11:01:09 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:04:53 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 18:17:23 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ctypes.h"
 #include <stddef.h>
 
-int			ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int		sign;
 	int		sum;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vesa <vesa@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/30 12:41:51 by vkuokka           #+#    #+#             */
-/*   Updated: 2021/02/24 14:58:46 by vesa             ###   ########.fr       */
+/*   Updated: 2021/05/28 18:31:57 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define PRECISION ".0123456789*"
 # define LENGTH "hlL"
 
-typedef struct		s_memo
+typedef struct s_memo
 {
 	bool			hash;
 	bool			zero;

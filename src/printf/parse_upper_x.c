@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_upper_x.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/03 16:19:15 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:31:49 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:18:09 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,19 @@
 #include "numbers.h"
 #include "swap.h"
 
-static char			*parse_upper_x_padding(char *p, t_memo *memo)
+static char	*parse_upper_x_padding(char *p, t_memo *memo)
 {
 	int				i;
 	char			*tmp;
 	char			*ad;
 	char			c;
 
-	if (!memo->width || (0 > (i = ft_atoi(memo->width) - ft_strlen(p))))
+	i = ft_atoi(memo->width) - ft_strlen(p);
+	if (!memo->width || (0 > i))
 		return (p);
 	c = ' ';
-	memo->zero && !memo->minus ? c = '0' : 0;
+	if (memo->zero && !memo->minus)
+		c = '0';
 	ad = ft_strnew(i);
 	while (i > 0)
 		ad[--i] = c;
@@ -35,8 +37,10 @@ static char			*parse_upper_x_padding(char *p, t_memo *memo)
 		p = ft_strjoin(p, ad);
 	else
 	{
-		ad[0] == '0' && ad[1] && p[1] == 'x' ? ft_swap_char(&p[1], &ad[1]) : 0;
-		ad[0] == '0' && !ad[1] && p[1] == 'x' ? ft_swap_char(&p[1], &p[0]) : 0;
+		if (ad[0] == '0' && ad[1] && p[1] == 'x')
+			ft_swap_char(&p[1], &ad[1]);
+		if (ad[0] == '0' && !ad[1] && p[1] == 'x')
+			ft_swap_char(&p[1], &p[0]);
 		p = ft_strjoin(ad, p);
 	}
 	free(ad);
@@ -44,7 +48,7 @@ static char			*parse_upper_x_padding(char *p, t_memo *memo)
 	return (p);
 }
 
-static char			*parse_upper_x_precision(char *print, t_memo *memo)
+static char	*parse_upper_x_precision(char *print, t_memo *memo)
 {
 	size_t			i;
 	char			*buffer;
@@ -66,11 +70,12 @@ static char			*parse_upper_x_precision(char *print, t_memo *memo)
 	}
 	else if (print[0] == '0' && !memo->hash)
 		print[0] = '\0';
-	memo->zero ? memo->zero = 0 : 0;
+	if (memo->zero)
+		memo->zero = 0;
 	return (print);
 }
 
-static char			*parse_upper_x_signs(char *print, t_memo *memo)
+static char	*parse_upper_x_signs(char *print, t_memo *memo)
 {
 	char			*tmp;
 
@@ -83,11 +88,12 @@ static char			*parse_upper_x_signs(char *print, t_memo *memo)
 	return (print);
 }
 
-static char			*parse_upper_x_length(va_list last, t_memo *memo)
+static char	*parse_upper_x_length(va_list last, t_memo *memo)
 {
 	char			*pos;
 
-	if ((pos = ft_strchr(memo->length, 'h')))
+	pos = ft_strchr(memo->length, 'h');
+	if (pos)
 	{
 		if (*(pos + 1) == 'h')
 			return (ft_itoa_base((unsigned char)
@@ -96,7 +102,8 @@ static char			*parse_upper_x_length(va_list last, t_memo *memo)
 			return (ft_itoa_base((unsigned short int)
 					va_arg(last, unsigned int), 16));
 	}
-	if ((pos = ft_strchr(memo->length, 'l')))
+	pos = ft_strchr(memo->length, 'l');
+	if (pos)
 	{
 		if (*(pos + 1) == 'l')
 			return (ft_itoa_base((unsigned long long)
@@ -108,7 +115,7 @@ static char			*parse_upper_x_length(va_list last, t_memo *memo)
 	return (ft_itoa_base((unsigned int)va_arg(last, unsigned int), 16));
 }
 
-int					parse_upper_x(va_list last, t_memo *memo)
+int	parse_upper_x(va_list last, t_memo *memo)
 {
 	char			*print;
 	int				i;

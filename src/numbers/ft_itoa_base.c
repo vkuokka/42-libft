@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/02 11:22:49 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:05:36 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 16:57:19 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,13 @@ static int	length(unsigned long long value, int base)
 	int	len;
 
 	len = 1;
-	while (value /= base)
+	while (1)
+	{
+		value /= base;
+		if (value < base)
+			break ;
 		len++;
+	}
 	return (len);
 }
 
@@ -28,7 +33,8 @@ static char	*reverse(char *str)
 	int		i;
 	int		j;
 
-	if (!(rev = ft_strnew(ft_strlen(str))))
+	rev = ft_strnew(ft_strlen(str));
+	if (!rev)
 		return (NULL);
 	i = 0;
 	j = ft_strlen(str) - 1;
@@ -50,7 +56,7 @@ static char	alpha(unsigned long long set)
 	return (alpha[set % 10]);
 }
 
-char		*ft_itoa_base(unsigned long long value, int base)
+char	*ft_itoa_base(unsigned long long value, int base)
 {
 	char	*str;
 	int		i;
@@ -60,7 +66,8 @@ char		*ft_itoa_base(unsigned long long value, int base)
 	if (base < 2 || base > 16)
 		return (NULL);
 	len = length(value, base);
-	if (!(str = ft_strnew(len)))
+	str = ft_strnew(len);
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (i < len)

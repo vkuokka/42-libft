@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/03 16:19:01 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/25 00:32:32 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:23:33 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 #include "strings.h"
 #include "numbers.h"
 
-static char			*parse_s_padding(char *print, t_memo *memo)
+static char	*parse_s_padding(char *print, t_memo *memo)
 {
 	int				i;
 	char			*tmp;
 	char			*pad;
 	char			c;
 
-	if (!memo->width || (0 > (i = ft_atoi(memo->width) - ft_strlen(print))))
+	i = ft_atoi(memo->width) - ft_strlen(print);
+	if (!memo->width || (0 > i))
 		return (print);
 	c = ' ';
-	memo->zero && !memo->minus ? c = '0' : 0;
+	if (memo->zero && !memo->minus)
+		c = '0';
 	pad = ft_strnew(i);
 	while (i > 0)
 		pad[--i] = c;
@@ -38,7 +40,7 @@ static char			*parse_s_padding(char *print, t_memo *memo)
 	return (print);
 }
 
-static char			*parse_s_precision(char *print, t_memo *memo)
+static char	*parse_s_precision(char *print, t_memo *memo)
 {
 	size_t			i;
 
@@ -51,7 +53,7 @@ static char			*parse_s_precision(char *print, t_memo *memo)
 	return (print);
 }
 
-int					parse_s(va_list last, t_memo *memo)
+int	parse_s(va_list last, t_memo *memo)
 {
 	char			*print;
 

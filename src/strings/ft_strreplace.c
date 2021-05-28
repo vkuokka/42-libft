@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strreplace.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/25 23:05:49 by mtuomine          #+#    #+#             */
-/*   Updated: 2020/06/29 14:49:34 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 14:58:51 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ static int	set_lens(t_lens *lens, char *org, char *rep, char *with)
 
 static char	*allocate_mem(t_lens lens)
 {
-	char *res;
+	char	*res;
 
 	res = (char *)malloc(sizeof(char) * \
 	(lens.len_org + (lens.len_with - lens.len_rep) * lens.count + 1));
 	return (res);
 }
 
-char		*ft_strreplace(char *org, char *rep, char *with)
+char	*ft_strreplace(char *org, char *rep, char *with)
 {
 	char	*res;
 	char	*ins;
@@ -42,8 +42,11 @@ char		*ft_strreplace(char *org, char *rep, char *with)
 	if (set_lens(&lens, org, rep, with))
 		return (NULL);
 	ins = org;
-	while ((temp = ft_strstr(ins, rep)))
+	while (1)
 	{
+		temp = ft_strstr(ins, rep);
+		if (!temp)
+			break ;
 		ins = temp + lens.len_rep;
 		lens.count++;
 	}

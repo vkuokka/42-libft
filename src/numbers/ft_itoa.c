@@ -3,26 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 18:14:35 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:05:41 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 16:55:23 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "strings.h"
 
-static int			length(long long n)
+static int	length(long long n)
 {
-	int count;
+	int	count;
 
 	count = 1;
-	while (n /= 10)
+	while (1)
+	{
+		n /= 10;
+		if (n < 10)
+			break ;
 		count++;
+	}
 	return (count);
 }
 
-char				*ft_itoa(long long n)
+char	*ft_itoa(long long n)
 {
 	size_t			i;
 	char			*strnb;
@@ -33,9 +38,13 @@ char				*ft_itoa(long long n)
 	if (n + 1 == -9223372036854775807)
 		return (ft_strdup("-9223372036854775808"));
 	neg = 0;
-	n < 0 ? neg = 1 : 0;
-	n < 0 ? n *= -1 : 0;
-	if (!(strnb = ft_strnew(neg + length(n))))
+	if (n < 0)
+	{
+		neg = 1;
+		n *= -1;
+	}
+	strnb = ft_strnew(neg + length(n));
+	if (!strnb)
 		return (NULL);
 	i = neg + length(n) - 1;
 	while (n != 0)

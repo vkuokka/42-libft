@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_di.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/03 16:17:50 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/06/27 13:28:25 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:40:09 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,19 @@
 #include "numbers.h"
 #include "swap.h"
 
-static char			*parse_di_padding(char *print, t_memo *memo)
+static char	*parse_di_padding(char *print, t_memo *memo)
 {
 	int				i;
 	char			*tmp;
 	char			*pad;
 	char			c;
 
-	if (!memo->width || (0 > (i = ft_atoi(memo->width) - ft_strlen(print))))
+	i = ft_atoi(memo->width) - ft_strlen(print);
+	if (!memo->width || (0 > i))
 		return (print);
 	c = ' ';
-	memo->zero && !memo->minus ? c = '0' : 0;
+	if (memo->zero && !memo->minus)
+		c = '0';
 	pad = ft_strnew(i);
 	while (i > 0)
 		pad[--i] = c;
@@ -34,9 +36,12 @@ static char			*parse_di_padding(char *print, t_memo *memo)
 		print = ft_strjoin(print, pad);
 	else
 	{
-		print[0] == '-' && pad[0] == '0' ? ft_swap_char(&print[0], &pad[0]) : 0;
-		print[0] == '+' && pad[0] == '0' ? ft_swap_char(&print[0], &pad[0]) : 0;
-		print[0] == ' ' && pad[0] == '0' ? ft_swap_char(&print[0], &pad[0]) : 0;
+		if (print[0] == '-' && pad[0] == '0')
+			ft_swap_char(&print[0], &pad[0]);
+		if (print[0] == '+' && pad[0] == '0')
+			ft_swap_char(&print[0], &pad[0]);
+		if (print[0] == ' ' && pad[0] == '0')
+			ft_swap_char(&print[0], &pad[0]);
 		print = ft_strjoin(pad, print);
 	}
 	free(tmp);
@@ -44,7 +49,7 @@ static char			*parse_di_padding(char *print, t_memo *memo)
 	return (print);
 }
 
-static char			*parse_di_precision(char *print, t_memo *memo)
+static char	*parse_di_precision(char *print, t_memo *memo)
 {
 	size_t			i;
 	char			*buffer;
@@ -56,11 +61,13 @@ static char			*parse_di_precision(char *print, t_memo *memo)
 	if (i > ft_strlen(print))
 	{
 		i = i - ft_strlen(print);
-		print[0] == '-' ? i++ : 0;
+		if (print[0] == '-')
+			i++;
 		buffer = ft_strnew(i);
 		while (i > 0)
 			buffer[--i] = '0';
-		print[0] == '-' ? ft_swap_char(&print[0], &buffer[0]) : 0;
+		if (print[0] == '-')
+			ft_swap_char(&print[0], &buffer[0]);
 		tmp = print;
 		print = ft_strjoin(buffer, print);
 		free(tmp);
@@ -68,11 +75,12 @@ static char			*parse_di_precision(char *print, t_memo *memo)
 	}
 	else if (print[0] == '0')
 		print[0] = '\0';
-	memo->zero ? memo->zero = 0 : 0;
+	if (memo->zero)
+		memo->zero = 0;
 	return (print);
 }
 
-static char			*parse_di_signs(char *print, t_memo *memo)
+static char	*parse_di_signs(char *print, t_memo *memo)
 {
 	char			*tmp;
 
@@ -95,18 +103,20 @@ static char			*parse_di_signs(char *print, t_memo *memo)
 	return (print);
 }
 
-static char			*parse_di_length(va_list last, t_memo *memo)
+static char	*parse_di_length(va_list last, t_memo *memo)
 {
 	char			*pos;
 
-	if ((pos = ft_strchr(memo->length, 'h')))
+	pos = ft_strchr(memo->length, 'h');
+	if (pos)
 	{
 		if (*(pos + 1) == 'h')
 			return (ft_itoa((signed char)va_arg(last, int)));
 		else
 			return (ft_itoa((short int)va_arg(last, int)));
 	}
-	if ((pos = ft_strchr(memo->length, 'l')))
+	pos = ft_strchr(memo->length, 'l');
+	if (pos)
 	{
 		if (*(pos + 1) == 'l')
 			return (ft_itoa((long long)va_arg(last, long long)));
@@ -116,7 +126,7 @@ static char			*parse_di_length(va_list last, t_memo *memo)
 	return (ft_itoa((int)va_arg(last, int)));
 }
 
-int					parse_di(va_list last, t_memo *memo)
+int	parse_di(va_list last, t_memo *memo)
 {
 	char			*print;
 

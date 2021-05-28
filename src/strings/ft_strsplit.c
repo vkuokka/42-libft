@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/23 10:48:17 by vkuokka           #+#    #+#             */
-/*   Updated: 2020/05/17 12:08:14 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 14:56:10 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ static int	ft_len(char const *s, char c)
 	return (count);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	char	**array;
 	size_t	i;
 	size_t	j;
 	size_t	stopper;
 
-	if (!s || !(array = (char **)malloc(sizeof(char *)
-	* ft_len(s, c) + sizeof(char))))
+	array = (char **)malloc(sizeof(char *) * ft_len(s, c) + sizeof(char));
+	if ((!s) || (!array))
 		return (NULL);
 	i = 0;
 	j = 0;

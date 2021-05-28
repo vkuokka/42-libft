@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_bits.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vkuokka <vkuokka@student.hive.fi>          +#+  +:+       +#+        */
+/*   By: jwilen <jwilen@student.hive.fi>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 15:09:44 by vkuokka           #+#    #+#             */
-/*   Updated: 2021/02/24 15:10:03 by vkuokka          ###   ########.fr       */
+/*   Updated: 2021/05/28 15:48:39 by jwilen           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdint.h>
 
-void			ft_print_bits(uint64_t bits, int len)
+void	ft_print_bits(uint64_t bits, int len)
 {
 	uint64_t	bit;
 
